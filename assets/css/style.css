@@ -471,24 +471,27 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.65rem;
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    font-weight: 700;
+    background-color: var(--color-lime);
+    color: var(--color-navy-dark);
+    font-weight: 800;
     font-size: 0.98rem;
-    padding: 0.8rem 2.1rem;
+    padding: 0.85rem 2.2rem;
     border-radius: 9999px;
     transition: var(--transition);
-    box-shadow: 0 8px 24px rgba(23, 105, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(198, 241, 53, 0.35);
+    border: none;
 }
 
 .btn-know-more:hover {
-    background-color: var(--color-blue-hover);
+    background-color: #d4f757;
+    color: var(--color-navy-dark);
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(23, 105, 255, 0.55);
+    box-shadow: 0 12px 30px rgba(198, 241, 53, 0.55);
 }
 
 .btn-arrow {
     font-size: 1.15rem;
+    font-weight: 900;
     transition: transform 0.25s ease;
 }
 
