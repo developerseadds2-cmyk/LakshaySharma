@@ -1,0 +1,1552 @@
+/* ==========================================================================
+   LAKSHAY SHARMA PORTFOLIO - DESIGN SYSTEM 2.0 (INDEX2.PHP)
+   Based on: Lakshay Sharma Badminton Portfolio (3).png Mockup
+   Integrates with existing includes/header.php and includes/footer.php
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ROOT VARIABLES & RESETS SPECIFIC TO CONCEPT 2
+   -------------------------------------------------------------------------- */
+:root {
+    --bg-dark: #070d1a;
+    --bg-navy: #0b1528;
+    --bg-navy-light: #101c35;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    
+    --color-lime: #c6f135;
+    --color-lime-glow: rgba(198, 241, 53, 0.4);
+    --color-blue: #1769ff;
+    --color-cyan: #00d2ff;
+    
+    --text-white: #ffffff;
+    --text-muted: #94a3b8;
+    --text-dark: #0b1528;
+    --text-dark-muted: #475569;
+}
+
+/* ==========================================================================
+   BUTTONS (MOCKUP STYLES)
+   ========================================================================== */
+.btn2-lime {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background-color: var(--color-lime);
+    color: var(--bg-dark);
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.85rem;
+    border-radius: 9999px;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn2-lime:hover {
+    background-color: #d8fa55;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(198, 241, 53, 0.35);
+    color: var(--bg-dark);
+}
+
+.btn2-outline-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background-color: #ffffff;
+    color: var(--text-dark);
+    border: 1.5px solid #0b1528;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 0.7rem 1.75rem;
+    border-radius: 9999px;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn2-outline-dark:hover {
+    background-color: var(--text-dark);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(11, 21, 40, 0.15);
+}
+
+/* ==========================================================================
+   SECTION KICKERS & LABELS
+   ========================================================================== */
+.kicker-line-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.8rem;
+}
+
+.kicker-text {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-lime);
+}
+
+.kicker-line {
+    display: inline-block;
+    width: 45px;
+    height: 2px;
+    background-color: var(--color-lime);
+}
+
+.kicker-slashes-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.8rem;
+}
+
+.kicker-slashes {
+    color: var(--color-lime);
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.kicker-text-dark {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dark);
+}
+
+/* Section Title Typography */
+.sec2-title-dark {
+    font-size: clamp(2.2rem, 3.4vw, 3rem);
+    font-weight: 900;
+    font-style: italic;
+    color: #000000; /* Bold Black Heading like Let's Connect */
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.6rem;
+    text-transform: capitalize;
+}
+
+.sec2-title-light {
+    font-size: clamp(2rem, 3.2vw, 2.7rem);
+    font-weight: 900;
+    font-style: italic;
+    color: var(--text-white);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.75rem;
+    text-transform: capitalize;
+}
+
+.sec2-desc-dark {
+    font-size: 1.05rem;
+    color: #000000; /* Bold Black Subtitle like Let's Connect */
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    max-width: 460px;
+}
+
+.sec2-desc-light {
+    font-size: 0.95rem;
+    font-weight: 700; /* Bold high-contrast white text like On The Court */
+    color: #ffffff;
+    opacity: 0.95;
+    line-height: 1.5;
+    margin-bottom: 1.35rem;
+    max-width: 380px;
+}
+
+/* ==========================================================================
+   FREESTYLE DYNAMIC SECTION DIVIDERS (NON-STRAIGHT MOCKUP TRANSITIONS)
+   ========================================================================== */
+.sec2-divider {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    pointer-events: none;
+    z-index: 4; /* Sits behind hero-visual (z-index: 6) so player's feet overlap cleanly without cut */
+    display: block;
+    line-height: 0;
+}
+
+.sec2-divider svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Ensure Hero Cutout stands fully grounded without any white strip hiding shoes */
+.hero-section {
+    overflow: hidden !important;
+}
+
+.hero-visual {
+    overflow: visible !important;
+    z-index: 5 !important; /* Visual and player feet stay on top */
+}
+
+.hero-composition-wrap {
+    overflow: visible !important;
+}
+
+.hero-action-cutout {
+    overflow: visible !important;
+    z-index: 5 !important;
+    bottom: 0 !important;
+}
+
+.action-cutout-img {
+    height: 65vh !important;
+    max-height: 560px !important;
+    object-position: bottom center !important;
+    margin-bottom: 0 !important;
+}
+
+/* Diagonal Transition Divider into About Section (Elevated over background stripes) */
+.hero-section .sec2-divider {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 40px; /* Slim, elegant angled cut */
+    pointer-events: none;
+    z-index: 3; /* Sits in front of the stripes (z-index: 2) so stripes never spill into the white section */
+}
+
+/* Diagonal stripes strictly contained within the dark hero section */
+.hero-section .mockup-diagonal-stripes {
+    z-index: 2;
+    overflow: hidden;
+}
+}
+
+.hero2-section {
+    position: relative;
+    padding-top: 2rem;
+    padding-bottom: 5.5rem;
+    background-color: var(--color-navy);
+    overflow: hidden;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+}
+
+/* Stadium Lights & Atmospheric Backdrop */
+.hero2-bg-atmosphere {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero2-stadium-glow {
+    position: absolute;
+    top: -10%;
+    left: 45%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(23, 105, 255, 0.22) 0%, rgba(198, 241, 53, 0.1) 40%, transparent 70%);
+    filter: blur(80px);
+}
+
+/* Slanted Energy Corner Stripes */
+.hero2-corner-stripes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 380px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hero2-grid {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Left Hero Content */
+.hero2-content {
+    max-width: 580px;
+}
+
+.hero2-title {
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.95;
+    letter-spacing: -1px;
+    margin-bottom: 1.2rem;
+    text-transform: capitalize;
+}
+
+.hero2-title-white {
+    display: block;
+    color: var(--text-white);
+}
+
+.hero2-title-lime {
+    display: block;
+    color: var(--color-lime);
+}
+
+.hero2-tagline {
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: var(--text-white);
+    margin-bottom: 1.1rem;
+}
+
+.hero2-bio {
+    font-size: 1.05rem;
+    color: var(--color-grey-light);
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+    max-width: 440px;
+}
+
+.hero2-cta-wrap {
+    margin-bottom: 2.2rem;
+}
+
+/* Integrated Hero Stats Row */
+.hero2-stats-row {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero2-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero2-stat-num {
+    font-size: 1.85rem;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--text-white);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.hero2-stat-num.stat-lime {
+    color: var(--color-lime);
+}
+
+.stat-ind-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.india-flag-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 19px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+}
+
+.india-flag-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.hero2-stat-lbl {
+    font-size: 0.8rem;
+    color: #ffffff;
+    opacity: 0.95;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.hero2-stat-divider {
+    width: 1px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Right Hero Visual */
+.hero2-visual {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    min-height: 480px;
+}
+
+.hero2-cutout-wrap {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero2-action-img {
+    max-height: 540px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.7));
+}
+
+.hero2-floating-shuttle {
+    position: absolute;
+    bottom: 25%;
+    left: 5%;
+    width: 90px;
+    height: auto;
+    z-index: 4;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+    animation: shuttleFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes shuttleFloat {
+    0% { transform: translateY(0) rotate(-15deg); }
+    100% { transform: translateY(-18px) rotate(-5deg); }
+}
+
+/* ==========================================================================
+   2. ABOUT LAKSHAY SECTION (LIGHT THEME)
+   ========================================================================== */
+.about2-section {
+    position: relative;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    padding: 0;
+    margin-top: 0; /* Sits naturally right below the hero section */
+    overflow: hidden;
+    z-index: 1;
+}
+
+.about2-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1.15fr 0.9fr;
+    align-items: center; /* Vertically centers center text and right features */
+    gap: 3.5rem;
+    width: 100%;
+}
+
+/* Left: Action Cutout + Polygon Backdrop - Grounded on Wave */
+.about2-left-visual {
+    position: relative;
+    display: flex;
+    align-self: flex-end; /* Only the player visual grounds on the bottom wave */
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    z-index: 2;
+}
+
+.about2-photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Grounded directly at the wave line */
+}
+
+/* Compact Polygon Shapes sitting strictly behind the image */
+.about2-bg-polygons {
+    position: absolute;
+    top: 170px; /* Kept compact and significantly lower than player's head and shoulders */
+    bottom: 20px;
+    left: 20px;
+    width: 330px;
+    height: 310px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.about2-photo-img {
+    position: relative;
+    z-index: 2; /* Renders cleanly in front of the shapes */
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    max-height: 520px; /* Much larger and commanding over the shapes */
+    object-fit: contain;
+    object-position: bottom center; /* Grounded directly at the bottom wave edge */
+    display: block;
+    margin-bottom: 0;
+    filter: drop-shadow(0 15px 30px rgba(11, 21, 40, 0.22));
+    transition: transform 0.4s ease;
+}
+
+.about2-photo-frame:hover .about2-photo-img {
+    transform: scale(1.02);
+}
+
+.about2-shuttle-accent {
+    position: absolute;
+    top: 155px;
+    left: 10px;
+    width: 55px;
+    height: auto;
+    z-index: 3;
+    opacity: 0.9;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.15));
+}
+
+/* Center: Typography */
+.about2-center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 2rem; /* Clean vertical balance aligned with player eye level */
+}
+
+/* Right: 3 Athletic Feature Rows */
+.about2-right-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding-left: 2rem;
+    border-left: 1px solid rgba(11, 21, 40, 0.1);
+    padding-bottom: 2rem;
+}
+
+.feature2-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+}
+
+.feature2-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #f1f5f9;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.feature2-row:hover .feature2-icon {
+    background-color: var(--color-lime);
+    transform: translateY(-2px);
+}
+
+.feature2-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.2rem;
+}
+
+.feature2-desc {
+    font-size: 0.85rem;
+    color: var(--text-dark-muted);
+}
+
+/* ==========================================================================
+   3. MY JOURNEY SECTION (DARK WITH TIMELINE & CINEMATIC ARENA BG)
+   ========================================================================== */
+.journey2-section {
+    position: relative;
+    background-color: var(--bg-navy);
+    padding: 3.5rem 0 3.2rem 0; /* Compact athletic height without empty space */
+    overflow: hidden;
+    border-top: none;
+}
+
+/* Cinematic Badminton Arena Backdrop Continuing into Wave */
+.journey2-bg-backdrop {
+    position: absolute;
+    top: -65px; /* Extends up through the 65px wave divider */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.journey2-bg-backdrop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right 30%;
+    opacity: 0.38; /* Visible player silhouette & court atmosphere */
+    filter: brightness(0.85) contrast(1.15);
+}
+
+.journey2-bg-backdrop::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(11, 21, 40, 0.94) 0%,
+        rgba(11, 21, 40, 0.82) 40%,
+        rgba(11, 21, 40, 0.55) 75%,
+        rgba(11, 21, 40, 0.88) 100%
+    );
+}
+
+.journey2-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+.journey2-timeline-wrap {
+    position: relative;
+    width: 100%;
+}
+
+/* Horizontal Timeline Track & Nodes matching Mockup */
+.journey2-timeline-wrap {
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.timeline2-track-line {
+    position: absolute;
+    top: 76px; /* Sits precisely centered through the neon green dots */
+    left: 2%;
+    width: 96%;
+    height: 3px;
+    background-color: var(--color-lime);
+    box-shadow: 0 0 10px rgba(198, 241, 53, 0.5);
+    z-index: 1;
+}
+
+.timeline2-nodes-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    text-align: center;
+}
+
+.timeline2-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Icon above the line */
+.timeline2-icon-wrap {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.85rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.timeline2-svg-icon {
+    width: 34px;
+    height: 34px;
+    display: block;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.timeline2-node:hover .timeline2-icon-wrap {
+    transform: translateY(-3px) scale(1.08);
+}
+
+/* 4th node highlight medal badge */
+.timeline2-node.is-highlight .timeline2-icon-wrap {
+    color: var(--color-lime);
+    filter: drop-shadow(0 0 12px rgba(198, 241, 53, 0.7));
+}
+
+/* Solid Neon Lime Node Dot directly on the line */
+.timeline2-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--color-lime);
+    box-shadow: 0 0 12px rgba(198, 241, 53, 0.85);
+    margin-bottom: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.timeline2-node:hover .timeline2-dot {
+    transform: scale(1.3);
+}
+
+/* Text & Captions below the line */
+.timeline2-text-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline2-year {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.timeline2-caption {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.35;
+    opacity: 0.95;
+}
+
+.timeline2-caption-only {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+    opacity: 0.95;
+}
+
+/* ==========================================================================
+   4. ACHIEVEMENTS SECTION (LIGHT GRID)
+   ========================================================================== */
+.achieve2-section {
+    position: relative;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    padding: 3rem 0 3.2rem 0;
+    overflow: hidden;
+}
+
+.achieve2-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.9fr;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.medals2-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+.medal2-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem 0.25rem;
+    border-right: 1px solid rgba(11, 21, 40, 0.08);
+    transition: var(--transition);
+}
+
+.medal2-card:last-child {
+    border-right: none;
+}
+
+.medal2-card:hover {
+    transform: translateY(-4px);
+}
+
+.medal2-img-wrap {
+    width: 100%;
+    max-width: 190px;
+    height: 220px;
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.medal2-img {
+    width: 100%;
+    height: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.17));
+}
+
+.medal2-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.medal2-sub {
+    font-size: 0.82rem;
+    color: var(--text-dark-muted);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   5. ON THE COURT (GALLERY SECTION - COMPACT ATHLETIC FOOTER NAVY)
+   ========================================================================== */
+.gallery2-section {
+    position: relative;
+    background-color: var(--color-navy-dark, #091020); /* Exact deep navy used in footer */
+    padding: 3.6rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gallery2-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    align-items: center;
+    gap: 3.5rem;
+    width: 100%;
+    padding-right: 45px; /* Ensures cards end cleanly before the right edge neon stripes */
+}
+
+.gallery2-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gallery2-title {
+    font-size: clamp(2rem, 3.2vw, 2.7rem);
+    font-weight: 900;
+    font-style: italic;
+    color: var(--text-white);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.75rem;
+    text-transform: capitalize;
+}
+
+.gallery2-desc {
+    font-size: 0.95rem;
+    font-weight: 700; /* Bold high-contrast text */
+    color: #ffffff;
+    opacity: 0.95;
+    line-height: 1.5;
+    margin-bottom: 1.35rem;
+    max-width: 360px;
+}
+
+/* Slanted Parallelogram Cards Grid - Filling the Right Space */
+.court-cards2-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.parallelogram-card {
+    position: relative;
+    height: 270px; /* Athletic gallery card height */
+    overflow: hidden;
+    transform: skewX(-10deg);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background-color: #0b1528;
+    transition: var(--transition);
+}
+
+.parallelogram-card:hover {
+    border-color: var(--color-lime);
+    box-shadow: 0 10px 25px rgba(198, 241, 53, 0.3);
+    transform: skewX(-10deg) translateY(-3px);
+}
+
+.parallelogram-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: skewX(10deg) scale(1.22);
+    transition: transform 0.5s ease;
+}
+
+.parallelogram-card:hover img {
+    transform: skewX(10deg) scale(1.3);
+}
+
+/* Clean Slanted Parallel Neon Sports Stripes along Right Edge */
+.court-cards2-grid {
+    position: relative;
+    z-index: 3;
+}
+
+.gallery2-neon-accent {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.gallery2-neon-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(198, 241, 53, 0.7));
+}
+
+/* ==========================================================================
+   6. LET'S CONNECT (CONTACT SECTION - COMPACT ATHLETIC FULL FLUSH LEFT)
+   ========================================================================== */
+.connect2-section {
+    position: relative;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    padding: 0;
+    overflow: hidden;
+    min-height: 250px;
+    height: 275px;
+}
+
+.connect2-flush-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 1.65fr;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+}
+
+/* Full Edge-to-Edge Flush Cinematic Arena Image with Matching Diagonal Cut */
+.connect2-cinema-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 70px) 100%, 0 100%);
+    overflow: hidden;
+    background-color: var(--color-navy);
+}
+
+.connect2-cinema-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.connect2-cinema-frame:hover .connect2-cinema-img {
+    transform: scale(1.04);
+}
+
+/* Parallel Diagonal Neon Stripes along Right Edge */
+.connect2-neon-border {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.connect2-neon-border svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: drop-shadow(-2px 0 12px rgba(198, 241, 53, 0.65));
+}
+
+.connect2-content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 1.8rem 4rem 1.8rem 1.5rem;
+    width: 100%;
+}
+
+.connect2-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 650px;
+}
+
+.connect2-title {
+    font-size: clamp(2rem, 3.2vw, 2.7rem);
+    font-weight: 900;
+    font-style: italic;
+    color: #000000; /* Bold Black Heading */
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.4rem;
+    text-transform: capitalize;
+}
+
+.connect2-desc {
+    font-size: 1.05rem;
+    color: #000000; /* Bold Black Subtitle */
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.3rem;
+}
+
+.connect2-socials-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.1rem;
+    flex-shrink: 0;
+}
+
+.social2-lg-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    color: var(--text-dark);
+    border: 1px solid rgba(11, 21, 40, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    transition: var(--transition);
+}
+
+.social2-lg-btn:hover {
+    background-color: var(--text-dark);
+    color: var(--color-lime);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(11, 21, 40, 0.18);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .hero2-grid,
+    .about2-grid,
+    .journey2-grid,
+    .achieve2-grid,
+    .gallery2-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .connect2-flush-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .connect2-cinema-frame {
+        height: 300px;
+        min-height: 300px;
+    }
+
+    .connect2-content-wrap {
+        padding: 2.5rem 2rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero2-content,
+    .about2-center-content,
+    .connect2-content {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .kicker-line-wrap,
+    .kicker-slashes-wrap,
+    .hero2-cta-wrap,
+    .hero2-stats-row {
+        justify-content: center;
+    }
+
+    .about2-right-features {
+        border-left: none;
+        border-top: 1px solid rgba(11, 21, 40, 0.08);
+        padding-left: 0;
+        padding-top: 1.8rem;
+        padding-bottom: 5.5rem; /* Ample clearance so items stay well above the bottom wave */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the feature rows block */
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        gap: 1.25rem;
+    }
+
+    .feature2-row {
+        width: 100%;
+        display: flex;
+        align-items: center; /* Clean vertical alignment between icon and text */
+        text-align: left; /* Keep title & description left-aligned with icon */
+        gap: 1.1rem;
+        padding: 0.5rem 0.75rem;
+        background: rgba(248, 250, 252, 0.6);
+        border-radius: 12px;
+    }
+
+    .connect2-socials-wrap {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-container {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        grid-template-columns: 1fr !important;
+        padding-bottom: 0 !important;
+        gap: 0 !important;
+    }
+
+    .hero-visual {
+        min-height: auto !important;
+        height: auto !important;
+        max-height: none !important;
+        margin-top: 1rem;
+    }
+
+    .hero-composition-wrap {
+        min-height: auto !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+
+    .hero-action-cutout {
+        min-height: auto !important;
+        height: auto !important;
+        max-height: none !important;
+        position: relative !important;
+        bottom: 0 !important;
+    }
+
+    .action-cutout-img {
+        height: auto !important;
+        max-height: 380px !important;
+        width: auto !important;
+        max-width: 90% !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+
+    .hero-section .sec2-divider {
+        height: 25px;
+    }
+
+    .about2-section {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .about2-left-visual {
+        align-self: center !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .about2-photo-frame {
+        max-width: 320px;
+        height: auto !important; /* Removes fixed 520px height container on mobile */
+        min-height: auto !important;
+        align-items: center !important;
+    }
+
+    .about2-photo-img {
+        max-height: 280px !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    .about2-bg-polygons {
+        top: 20px;
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* -------------------------------------------------------------
+       MOBILE VIEW: CENTER ALL CONTENT, HEADINGS, DESCRIPTIONS & BUTTONS
+       ------------------------------------------------------------- */
+
+    /* Section Intros & Text Containers */
+    .hero-content,
+    .hero2-content,
+    .about2-center-content,
+    .journey2-grid > div:first-child,
+    .achieve2-grid > div:first-child,
+    .gallery2-intro,
+    .connect2-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* All Kickers Centered */
+    .kicker-line-wrap,
+    .kicker-slashes-wrap {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 auto 0.75rem auto !important;
+    }
+
+    /* All Titles & Descriptions Centered */
+    .sec2-title-dark,
+    .sec2-title-light,
+    .gallery2-title,
+    .connect2-title,
+    .hero-headline,
+    .hero-tagline,
+    .hero-bio,
+    .sec2-desc-dark,
+    .sec2-desc-light,
+    .gallery2-desc,
+    .connect2-desc {
+        text-align: center !important;
+    }
+
+    .journey2-grid .sec2-title-light {
+        white-space: nowrap !important;
+        font-size: clamp(1.6rem, 5.5vw, 2.3rem) !important;
+    }
+
+    /* All CTA Buttons Centered */
+    .hero-cta-wrap,
+    .hero2-cta-wrap,
+    .about2-center-content > div,
+    .journey2-grid > div:first-child > div,
+    .achieve2-grid > div:first-child > div,
+    .gallery2-intro > div,
+    .connect2-content > div {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .btn2-lime,
+    .btn2-outline-dark,
+    .btn-know-more {
+        align-self: center !important;
+        margin: 0 auto !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+    }
+
+    /* Hero stats row centered */
+    .hero-stats-row,
+    .hero2-stats-row {
+        justify-content: center !important;
+        margin: 1.5rem auto !important;
+    }
+
+    /* Remove floating green dots on phone to maintain clean vertical alignment */
+    .timeline2-dot {
+        display: none !important;
+    }
+
+    .timeline2-icon-wrap {
+        margin-bottom: 0.6rem !important;
+    }
+
+    .timeline2-nodes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.2rem 1.5rem;
+    }
+
+    .timeline2-node {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .timeline2-track-line {
+        display: none;
+    }
+
+    .medals2-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .medal2-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(11, 21, 40, 0.08);
+    }
+
+    .court-cards2-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .parallelogram-card {
+        transform: none;
+    }
+
+    .parallelogram-card img {
+        transform: scale(1.1);
+    }
+
+    /* Hide neon diagonal stroke accent on phone in Gallery section */
+    .gallery2-neon-accent {
+        display: none !important;
+    }
+
+    .gallery2-grid {
+        padding-right: 0 !important;
+    }
+
+    /* -------------------------------------------------------------
+       LET'S CONNECT SECTION RESPONSIVENESS ON PHONE
+       ------------------------------------------------------------- */
+    .connect2-section {
+        height: auto !important;
+        min-height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .connect2-flush-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: auto !important;
+        width: 100% !important;
+    }
+
+    .connect2-cinema-frame {
+        width: 100% !important;
+        height: 190px !important;
+        min-height: 190px !important;
+        max-height: 190px !important;
+        clip-path: none !important; /* Remove desktop angle clip on phone so full image is visible */
+        position: relative !important;
+    }
+
+    .connect2-cinema-img {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+
+    .connect2-neon-border {
+        display: none !important; /* Hide right-edge slanted svg seam on phone */
+    }
+
+    .connect2-content-wrap {
+        padding: 2.2rem 1.25rem 2.8rem 1.25rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .connect2-content {
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .connect2-title {
+        font-size: clamp(1.8rem, 6vw, 2.3rem) !important;
+        text-align: center !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .connect2-desc {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+        max-width: 320px !important;
+        margin: 0 auto 1.5rem auto !important;
+        line-height: 1.5 !important;
+    }
+
+    .connect2-content .btn2-lime {
+        align-self: center !important;
+        margin: 0 auto !important;
+    }
+
+    /* Hide neon diagonal stroke accent on phone in Gallery section */
+    .gallery2-neon-accent {
+        display: none !important;
+    }
+
+    .gallery2-grid {
+        padding-right: 0 !important;
+    }
+
+    /* -------------------------------------------------------------
+       LET'S CONNECT SECTION RESPONSIVENESS ON PHONE
+       ------------------------------------------------------------- */
+    .connect2-section {
+        height: auto !important;
+        min-height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .connect2-flush-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: auto !important;
+        width: 100% !important;
+    }
+
+    .connect2-cinema-frame {
+        width: 100% !important;
+        height: 190px !important;
+        min-height: 190px !important;
+        max-height: 190px !important;
+        clip-path: none !important; /* Remove desktop angle clip on phone so full image is visible */
+        position: relative !important;
+    }
+
+    .connect2-cinema-img {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+
+    .connect2-neon-border {
+        display: none !important; /* Hide right-edge slanted svg seam on phone */
+    }
+
+    .connect2-content-wrap {
+        padding: 2.2rem 1.25rem 2.8rem 1.25rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .connect2-content {
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .connect2-title {
+        font-size: clamp(1.8rem, 6vw, 2.3rem) !important;
+        text-align: center !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .connect2-desc {
+        font-size: 0.95rem !important;
+        text-align: center !important;
+        max-width: 320px !important;
+        margin: 0 auto 1.5rem auto !important;
+        line-height: 1.5 !important;
+    }
+
+    .connect2-content .btn2-lime {
+        align-self: center !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* ==========================================================================
+   SCROLL-TRIGGERED SECTION IN-ANIMATIONS (INDEX2.PHP)
+   ========================================================================== */
+.sec2-anim-hidden {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.sec2-anim-up {
+    transform: translateY(35px);
+}
+
+.sec2-anim-left {
+    transform: translateX(-40px);
+}
+
+.sec2-anim-right {
+    transform: translateX(40px);
+}
+
+.sec2-anim-scale {
+    transform: scale(0.92);
+}
+
+/* Revealed State */
+.sec2-anim-visible {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+}
+
+/* Stagger Delays */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+
+/* Pulse Glow & Floating Elements */
+.about2-shuttle-accent {
+    animation: shuttleBob 4s ease-in-out infinite alternate;
+}
+
+@keyframes shuttleBob {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-12px) rotate(8deg); }
+}

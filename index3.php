@@ -63,9 +63,9 @@ include_once __DIR__ . '/includes/header.php';
         <!-- Center-Right Hero Action Visual Composition (Action Cutout in Full Color) -->
         <div class="hero-visual">
             <div class="hero-composition-wrap">
-                <!-- Action Cutout in Full Vibrant Color -->
+                <!-- Action Cutout in Full Vibrant Color: Dynamic Badminton Player Cutout -->
                 <div class="hero-action-cutout anim-fade-in" style="--delay: 0.4s;">
-                    <img src="assets/images/coutout.png" alt="Lakshay Sharma Badminton Action" class="action-cutout-img">
+                    <img src="assets/images/Dynamic Badminton Player Cutout.png" alt="Lakshay Sharma Badminton Action" class="action-cutout-img">
                 </div>
             </div>
 
@@ -84,30 +84,30 @@ include_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Quick Stats Bar -->
-    <div class="hero-stats-bar reveal-on-scroll" data-reveal="fade-up">
+    <div class="hero-stats-bar">
         <div class="site-container stats-grid">
-            <div class="stat-item reveal-on-scroll" data-reveal="fade-up" data-delay="100">
+            <div class="stat-item">
                 <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
                 <div class="stat-details">
                     <span class="stat-title">Silver Medal</span>
                     <span class="stat-sub">All-India Ranking (2025)</span>
                 </div>
             </div>
-            <div class="stat-item reveal-on-scroll" data-reveal="fade-up" data-delay="200">
+            <div class="stat-item">
                 <div class="stat-icon stat-icon-medal"><i class="fa-solid fa-medal"></i></div>
                 <div class="stat-details">
                     <span class="stat-title">World Ranking</span>
                     <span class="stat-sub stat-highlight"><span class="counter" data-target="112">0</span> <small>(MS)</small></span>
                 </div>
             </div>
-            <div class="stat-item reveal-on-scroll" data-reveal="fade-up" data-delay="300">
+            <div class="stat-item">
                 <div class="stat-icon stat-icon-star"><i class="fa-solid fa-star"></i></div>
                 <div class="stat-details">
                     <span class="stat-title">India Rank</span>
                     <span class="stat-sub stat-highlight"><span class="counter" data-target="4">0</span> <small>(MS)</small></span>
                 </div>
             </div>
-            <div class="stat-item reveal-on-scroll" data-reveal="fade-up" data-delay="400">
+            <div class="stat-item">
                 <div class="stat-icon"><i class="fa-solid fa-location-dot"></i></div>
                 <div class="stat-details">
                     <span class="stat-title">From</span>
@@ -120,13 +120,30 @@ include_once __DIR__ . '/includes/header.php';
 
 <!-- ================= ABOUT LAKSHAY SECTION ================= -->
 <section class="about-section" id="about">
-    <div class="about-split-container">
-        <!-- Left Action Image Flush to top, bottom, and left -->
+    <div class="about-flush-layout">
+        <!-- Left: Image with Hero Diagonal Stripes Transition -->
         <div class="about-visual reveal-on-scroll" data-reveal="slide-right">
-            <img src="assets/images/aboutlakshay.png" alt="Lakshay Sharma playing badminton" class="about-photo">
+            <div class="about-stripe-frame">
+                <!-- Main Edge-to-Edge Photo -->
+                <img src="assets/images/lakshay-sharma-11.webp" alt="Lakshay Sharma playing badminton" class="about-stripe-photo">
+                
+                <!-- Matching Parallel Diagonal Stripes from Hero (Right transition seam) -->
+                <div class="about-diagonal-stripes" aria-hidden="true">
+                    <svg viewBox="0 0 240 330" preserveAspectRatio="none" class="about-stripes-svg">
+                        <!-- Background section color fill -->
+                        <polygon points="60,0 240,0 240,330 220,330" fill="#f8fafc" />
+                        <!-- Lime Green Parallel Stripe (#C6F135) -->
+                        <polygon points="40,0 70,0 220,330 190,330" fill="#C6F135" />
+                        <!-- Electric Blue Parallel Accent Stripe (#1769FF) -->
+                        <polygon points="15,0 35,0 185,330 165,330" fill="#1769FF" />
+                        <!-- Dark Navy Edge Seam (#101C35) -->
+                        <polygon points="0,0 10,0 160,330 150,330" fill="#fbfbfc" />
+                    </svg>
+                </div>
+            </div>
         </div>
 
-        <!-- Right Content with comfortable padding -->
+        <!-- Right: Content with comfortable padding -->
         <div class="about-content reveal-on-scroll" data-reveal="slide-left">
             <div class="about-tag-wrap reveal-on-scroll" data-reveal="slide-left" data-delay="100">
                 <span class="about-tag-bar"></span>

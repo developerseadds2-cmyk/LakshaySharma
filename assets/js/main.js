@@ -14,30 +14,36 @@
 
             counters.forEach(function(counter) {
                 var target = parseInt(counter.getAttribute('data-target'), 10) || 0;
-                var duration = 1600; // ms smooth run
+                var duration = 1800; // ms duration
+                var startVal = 0;
                 var startTime = null;
 
-                function easeOutQuart(x) {
-                    return 1 - Math.pow(1 - x, 4);
+                function easeOutQuad(t) {
+                    return t * (2 - t);
                 }
 
                 function step(timestamp) {
                     if (!startTime) startTime = timestamp;
                     var progress = Math.min((timestamp - startTime) / duration, 1);
-                    var current = Math.floor(easeOutQuart(progress) * target);
+                    var current = Math.floor(easeOutQuad(progress) * target);
                     counter.textContent = current;
 
                     if (progress < 1) {
                         requestAnimationFrame(step);
                     } else {
-                        counter.textContent = target;
+                        counter.textContent = target; // Locks cleanly at final number
                     }
                 }
                 requestAnimationFrame(step);
             });
         }
 
-        var statsBar = document.querySelector('.hero-stats-bar');
+        // Run immediately on page load/refresh for hero stats
+        setTimeout(function() {
+            runCounters();
+        }, 300);
+
+        var statsBar = document.querySelector('.hero-stats-bar, .hero2-stats-row');
         if (statsBar && 'IntersectionObserver' in window) {
             var statsObserver = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
@@ -46,16 +52,14 @@
                         statsObserver.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.2 });
+            }, { threshold: 0.05 });
             statsObserver.observe(statsBar);
-        } else {
-            runCounters();
         }
     }
 
     // 2. Smooth Scroll Reveal (Triggered fluidly as user scrolls down)
     function initSmoothScrollReveal() {
-        var elements = document.querySelectorAll('.reveal-on-scroll');
+        var elements = document.querySelectorAll('.reveal-on-scroll, .sec2-anim-hidden');
         if (!elements.length) return;
 
         if ('IntersectionObserver' in window) {
@@ -67,14 +71,15 @@
 
                         setTimeout(function() {
                             el.classList.add('is-revealed');
+                            el.classList.add('sec2-anim-visible');
                         }, delay);
 
                         revealObserver.unobserve(el);
                     }
                 });
             }, {
-                rootMargin: '0px 0px -70px 0px', // Triggers naturally when scrolled 70px into view
-                threshold: 0.12
+                rootMargin: '0px 0px -40px 0px',
+                threshold: 0.1
             });
 
             elements.forEach(function(el) {
@@ -83,6 +88,7 @@
         } else {
             elements.forEach(function(el) {
                 el.classList.add('is-revealed');
+                el.classList.add('sec2-anim-visible');
             });
         }
     }

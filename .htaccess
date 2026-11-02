@@ -1,0 +1,12 @@
+# Apache rewrite for clean routing and 404 fallback to coming-soon.php
+RewriteEngine On
+RewriteBase /lakshay%20sharma/
+
+# 404 Fallback to coming-soon.php
+ErrorDocument 404 /lakshay%20sharma/coming-soon.php
+
+# If requested file or directory does not exist, route to coming-soon.php with the page name
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)(\.php)?$ coming-soon.php?page=$1 [L,QSA]
+

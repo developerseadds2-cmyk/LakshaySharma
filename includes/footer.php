@@ -35,17 +35,8 @@
                 <div class="footer-col-social">
                     <h4 class="footer-col-heading">Follow Lakshay</h4>
                     <div class="footer-social-icons">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Instagram">
+                        <a href="https://www.instagram.com/lakshaysharma822/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="YouTube">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="X (Twitter)">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
                         </a>
                     </div>
                 </div>
@@ -56,12 +47,11 @@
                 </div>
             </div>
 
-            <!-- Bottom Copyright & Location Strip -->
+            <!-- Bottom Copyright & Credit Strip -->
             <div class="footer-bottom-bar">
                 <p class="footer-copy">&copy; <?php echo date("Y"); ?> Lakshay Sharma. All Rights Reserved.</p>
-                <p class="footer-location">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Ludhiana, Punjab &nbsp;|&nbsp; India</span>
+                <p class="footer-credit">
+                    Designed and Developed by <a href="https://punjabit.co/" target="_blank" rel="noopener noreferrer" class="footer-credit-link">PunjabIT</a>
                 </p>
             </div>
         </div>
