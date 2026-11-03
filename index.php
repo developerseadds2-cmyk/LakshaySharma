@@ -6,7 +6,7 @@
  */
 $pageTitle = "Lakshay Sharma | Badminton Player (Concept 2)";
 $currentPage = "home";
-$homeUrl = "index2.php";
+$homeUrl = "index.php";
 include_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -337,7 +337,7 @@ include_once __DIR__ . '/includes/header.php';
                 </div>
 
                 <h2 class="sec2-title-dark">
-                    Results That<br>Matter.
+                    Results That<br class="desktop-only-br"> Matter.
                 </h2>
 
                 <p class="sec2-desc-dark">
@@ -416,7 +416,7 @@ include_once __DIR__ . '/includes/header.php';
                 </div>
 
                 <h2 class="gallery2-title">
-                    The Game<br>In Action.
+                    The Game<br class="desktop-only-br"> In Action.
                 </h2>
 
                 <p class="gallery2-desc">

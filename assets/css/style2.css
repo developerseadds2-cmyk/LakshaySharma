@@ -164,6 +164,7 @@
 /* ==========================================================================
    FREESTYLE DYNAMIC SECTION DIVIDERS (NON-STRAIGHT MOCKUP TRANSITIONS)
    ========================================================================== */
+/* Freestyle Slanted Section Divider into About Section */
 .sec2-divider {
     position: absolute;
     bottom: -1px;
@@ -182,34 +183,7 @@
     display: block;
 }
 
-/* Ensure Hero Cutout stands fully grounded without any white strip hiding shoes */
-.hero-section {
-    overflow: hidden !important;
-}
-
-.hero-visual {
-    overflow: visible !important;
-    z-index: 5 !important; /* Visual and player feet stay on top */
-}
-
-.hero-composition-wrap {
-    overflow: visible !important;
-}
-
-.hero-action-cutout {
-    overflow: visible !important;
-    z-index: 5 !important;
-    bottom: 0 !important;
-}
-
-.action-cutout-img {
-    height: 65vh !important;
-    max-height: 560px !important;
-    object-position: bottom center !important;
-    margin-bottom: 0 !important;
-}
-
-/* Diagonal Transition Divider into About Section (Elevated over background stripes) */
+/* Diagonal Transition Divider into About Section */
 .hero-section .sec2-divider {
     position: absolute;
     bottom: -1px;
@@ -217,14 +191,7 @@
     width: 100%;
     height: 40px; /* Slim, elegant angled cut */
     pointer-events: none;
-    z-index: 3; /* Sits in front of the stripes (z-index: 2) so stripes never spill into the white section */
-}
-
-/* Diagonal stripes strictly contained within the dark hero section */
-.hero-section .mockup-diagonal-stripes {
-    z-index: 2;
-    overflow: hidden;
-}
+    z-index: 3;
 }
 
 .hero2-section {
@@ -329,7 +296,14 @@
     align-items: center;
     gap: 1.8rem;
     padding-top: 1.2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.hero2-stat-divider {
+    width: 1.5px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.45);
+    flex-shrink: 0;
 }
 
 .hero2-stat-item {
@@ -381,12 +355,6 @@
     opacity: 0.95;
     font-weight: 700;
     text-transform: capitalize;
-}
-
-.hero2-stat-divider {
-    width: 1px;
-    height: 36px;
-    background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Right Hero Visual */
@@ -521,6 +489,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 10px !important;
     padding-bottom: 2rem; /* Clean vertical balance aligned with player eye level */
 }
 
@@ -1297,6 +1266,7 @@
     }
 
     .about2-center-content {
+        padding-top: 10px !important;
         padding-bottom: 0 !important;
         margin-bottom: 0 !important;
     }
@@ -1320,6 +1290,7 @@
     }
 
     .about2-center-content {
+        padding-top: 10px !important;
         padding-bottom: 0 !important;
         margin-bottom: 0 !important;
     }
@@ -1328,9 +1299,193 @@
         margin-bottom: 0 !important;
     }
 
+    /* Section 3: My Journey Responsiveness on Phone */
+    .journey2-section {
+        padding: 3rem 0 3.2rem 0 !important;
+    }
+
+    .journey2-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
     .journey2-grid .sec2-title-light {
         white-space: nowrap !important;
-        font-size: clamp(1.6rem, 5.5vw, 2.3rem) !important;
+        font-size: clamp(1.5rem, 6.5vw, 2.2rem) !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .sec2-desc-light {
+        font-size: 0.95rem !important;
+        max-width: 330px !important;
+        margin: 0 auto 1.4rem auto !important;
+        line-height: 1.5 !important;
+    }
+
+    .journey2-timeline-wrap {
+        padding: 0.5rem 0 !important;
+    }
+
+    /* Remove floating green dots and horizontal track line on phone */
+    .timeline2-dot,
+    .timeline2-track-line {
+        display: none !important;
+    }
+
+    .timeline2-nodes-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.25rem 1rem !important;
+        width: 100% !important;
+    }
+
+    .timeline2-node {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        background: rgba(255, 255, 255, 0.04) !important;
+        border: 1px solid rgba(220, 227, 236, 0.09) !important;
+        border-radius: 14px !important;
+        padding: 1.25rem 0.75rem !important;
+        transition: transform 0.25s ease !important;
+    }
+
+    .timeline2-node.is-highlight {
+        background: rgba(198, 241, 53, 0.08) !important;
+        border-color: rgba(198, 241, 53, 0.28) !important;
+    }
+
+    .timeline2-icon-wrap {
+        height: 44px !important;
+        font-size: 1.6rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .timeline2-year {
+        font-size: 1.15rem !important;
+        font-weight: 900 !important;
+        color: var(--color-lime) !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    .timeline2-caption,
+    .timeline2-caption-only {
+        font-size: 0.82rem !important;
+        line-height: 1.35 !important;
+        color: #e2e8f0 !important;
+    }
+
+    /* Section 4: Achievements Responsiveness on Phone */
+    .achieve2-section {
+        padding: 2.8rem 0 3rem 0 !important;
+    }
+
+    .achieve2-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.8rem !important;
+    }
+
+    .achieve2-grid .sec2-title-dark {
+        white-space: nowrap !important;
+        font-size: clamp(1.5rem, 6.5vw, 2.2rem) !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .sec2-desc-dark {
+        font-size: 0.95rem !important;
+        max-width: 330px !important;
+        margin: 0 auto 1.4rem auto !important;
+        line-height: 1.5 !important;
+    }
+
+    .medals2-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.1rem !important;
+        width: 100% !important;
+    }
+
+    .medal2-card {
+        border-right: none !important;
+        border: 1px solid rgba(11, 21, 40, 0.08) !important;
+        background: #f8fafc !important;
+        border-radius: 14px !important;
+        padding: 1.1rem 0.6rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .medal2-img-wrap {
+        max-width: 120px !important;
+        height: 130px !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .medal2-img {
+        max-height: 130px !important;
+        object-fit: contain !important;
+    }
+
+    .medal2-title {
+        font-size: 0.9rem !important;
+        font-weight: 800 !important;
+        margin-bottom: 0.2rem !important;
+        color: var(--text-dark) !important;
+    }
+
+    .medal2-sub {
+        font-size: 0.78rem !important;
+        color: var(--text-dark-muted) !important;
+    }
+
+    /* Section 5: Gallery / On The Court Responsiveness on Phone */
+    .gallery2-section {
+        padding: 2.8rem 0 3.2rem 0 !important;
+    }
+
+    .gallery2-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding-right: 0 !important;
+    }
+
+    .gallery2-title {
+        white-space: nowrap !important;
+        font-size: clamp(1.5rem, 6.5vw, 2.2rem) !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .gallery2-desc {
+        font-size: 0.95rem !important;
+        max-width: 330px !important;
+        margin: 0 auto 1.4rem auto !important;
+        line-height: 1.5 !important;
+    }
+
+    .court-cards2-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+        width: 100% !important;
+    }
+
+    .parallelogram-card {
+        transform: none !important;
+        height: 220px !important;
+        border-radius: 14px !important;
+        border: 2px solid rgba(255, 255, 255, 0.15) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .parallelogram-card img {
+        transform: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .gallery2-neon-accent {
+        display: none !important;
     }
 
     /* All CTA Buttons Centered */
@@ -1365,62 +1520,6 @@
         margin: 0.6rem auto 1.3rem auto !important;
     }
 
-    /* Remove floating green dots on phone to maintain clean vertical alignment */
-    .timeline2-dot {
-        display: none !important;
-    }
-
-    .timeline2-icon-wrap {
-        margin-bottom: 0.6rem !important;
-    }
-
-    .timeline2-nodes-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2.2rem 1.5rem;
-    }
-
-    .timeline2-node {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .timeline2-track-line {
-        display: none;
-    }
-
-    .medals2-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-
-    .medal2-card {
-        border-right: none;
-        border-bottom: 1px solid rgba(11, 21, 40, 0.08);
-    }
-
-    .court-cards2-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .parallelogram-card {
-        transform: none;
-    }
-
-    .parallelogram-card img {
-        transform: scale(1.1);
-    }
-
-    /* Hide neon diagonal stroke accent on phone in Gallery section */
-    .gallery2-neon-accent {
-        display: none !important;
-    }
-
-    .gallery2-grid {
-        padding-right: 0 !important;
-    }
-
     /* -------------------------------------------------------------
        LET'S CONNECT SECTION RESPONSIVENESS ON PHONE
        ------------------------------------------------------------- */
@@ -1478,7 +1577,8 @@
     }
 
     .connect2-title {
-        font-size: clamp(1.8rem, 6vw, 2.3rem) !important;
+        white-space: nowrap !important;
+        font-size: clamp(1.6rem, 6.5vw, 2.3rem) !important;
         text-align: center !important;
         margin-bottom: 0.6rem !important;
     }
@@ -1493,92 +1593,93 @@
 
     .connect2-content .btn2-lime {
         align-self: center !important;
-        margin: 0 auto !important;
-    }
-
-    /* Hide neon diagonal stroke accent on phone in Gallery section */
-    .gallery2-neon-accent {
-        display: none !important;
-    }
-
-    .gallery2-grid {
-        padding-right: 0 !important;
+        margin: 0 auto 10px auto !important;
+        margin-bottom: 10px !important;
     }
 
     /* -------------------------------------------------------------
-       LET'S CONNECT SECTION RESPONSIVENESS ON PHONE
+       FOOTER RESPONSIVENESS ON PHONE
        ------------------------------------------------------------- */
-    .connect2-section {
-        height: auto !important;
-        min-height: auto !important;
-        display: flex !important;
+    .site-footer {
+        padding: 3rem 0 1.8rem 0 !important;
+    }
+
+    .footer-main-row {
         flex-direction: column !important;
-    }
-
-    .connect2-flush-layout {
-        display: flex !important;
-        flex-direction: column !important;
-        height: auto !important;
-        min-height: auto !important;
-        width: 100% !important;
-    }
-
-    .connect2-cinema-frame {
-        width: 100% !important;
-        height: 190px !important;
-        min-height: 190px !important;
-        max-height: 190px !important;
-        clip-path: none !important; /* Remove desktop angle clip on phone so full image is visible */
-        position: relative !important;
-    }
-
-    .connect2-cinema-img {
-        position: relative !important;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: center !important;
-    }
-
-    .connect2-neon-border {
-        display: none !important; /* Hide right-edge slanted svg seam on phone */
-    }
-
-    .connect2-content-wrap {
-        padding: 2.2rem 1.25rem 2.8rem 1.25rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
+        align-items: center !important;
         text-align: center !important;
+        gap: 2rem !important;
+    }
+
+    .footer-col-brand,
+    .footer-col-contact,
+    .footer-col-social {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .footer-brand-logo-link {
+        display: inline-flex !important;
         justify-content: center !important;
-        align-items: center !important;
     }
 
-    .connect2-content {
-        align-items: center !important;
-        text-align: center !important;
-        width: 100% !important;
-        max-width: 100% !important;
+    .footer-brand-logo-img {
+        height: auto !important;
+        max-width: 220px !important;
         margin: 0 auto !important;
     }
 
-    .connect2-title {
-        font-size: clamp(1.8rem, 6vw, 2.3rem) !important;
-        text-align: center !important;
-        margin-bottom: 0.6rem !important;
+    .footer-tagline-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 
-    .connect2-desc {
-        font-size: 0.95rem !important;
-        text-align: center !important;
-        max-width: 320px !important;
-        margin: 0 auto 1.5rem auto !important;
-        line-height: 1.5 !important;
+    .footer-tagline-slash {
+        margin: 0 auto !important;
     }
 
-    .connect2-content .btn2-lime {
+    .footer-col-divider {
+        display: none !important;
+    }
+
+    .footer-contact-desc {
+        max-width: 290px !important;
+        margin: 0 auto 1rem auto !important;
+        text-align: center !important;
+    }
+
+    .btn-footer-contact {
         align-self: center !important;
         margin: 0 auto !important;
     }
+
+    .footer-social-icons {
+        justify-content: center !important;
+        margin: 0.4rem auto 0 auto !important;
+    }
+
+    .footer-col-shuttle {
+        display: none !important; /* Hide shuttlecock clipping on phone */
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
+        padding-top: 1.5rem !important;
+    }
+
+    .footer-copy,
+    .footer-credit {
+        text-align: center !important;
+        justify-content: center !important;
+    }
+}
 }
 
 /* ==========================================================================

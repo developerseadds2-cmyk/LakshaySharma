@@ -191,8 +191,8 @@ a {
 
 .brand-logo-img {
     width: auto;
-    max-width: 220px;
-    height: 42px;
+    max-width: 271px;
+    height: 77px !important;
     object-fit: contain;
     display: block;
 }
@@ -2057,9 +2057,9 @@ a {
 }
 
 .footer-brand-logo-img {
-    height: 48px;
+    height: auto !important;
     width: auto;
-    max-width: 220px;
+    max-width: 240px;
     object-fit: contain;
     display: block;
 }
@@ -2260,8 +2260,8 @@ a {
     }
 
     .footer-brand-logo-img {
-        height: 42px;
-        max-width: 190px;
+        height: auto !important;
+        max-width: 220px !important;
     }
 
     .footer-col-divider {
@@ -2311,17 +2311,17 @@ a {
     }
 
     .drawer-logo-img {
-        height: 38px !important;
+        height: 50px !important;
         width: auto !important;
-        max-width: 150px !important;
+        max-width: 200px !important;
         object-fit: contain !important;
         display: block !important;
     }
 
     .brand-logo-img {
-        height: 38px !important;
+        height: 50px !important;
         width: auto !important;
-        max-width: 160px !important;
+        max-width: 220px !important;
         object-fit: contain !important;
     }
 
@@ -2576,9 +2576,9 @@ a {
     }
 
     .hero-stats-5col .hero2-stat-divider {
-        width: 1px !important;
-        height: 20px !important;
-        background-color: rgba(255, 255, 255, 0.15) !important;
+        width: 1.5px !important;
+        height: 24px !important;
+        background-color: rgba(255, 255, 255, 0.45) !important;
         flex-shrink: 0 !important;
     }
 
@@ -3055,5 +3055,117 @@ a {
         flex-direction: column;
         gap: 0.3rem;
         white-space: normal;
+    }
+}
+
+/* ================= 404 PAGE STYLES ================= */
+.error-404-section {
+    position: relative;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--color-navy);
+    padding: 3.5rem 0;
+}
+
+.error-404-container {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.error-404-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-404-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    background-color: rgba(198, 241, 53, 0.12);
+    border: 1px solid rgba(198, 241, 53, 0.35);
+    color: var(--color-lime);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.error-404-badge .badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-lime);
+    box-shadow: 0 0 10px var(--color-lime);
+}
+
+.error-404-code {
+    font-size: clamp(5.5rem, 15vw, 10rem);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    color: var(--color-white);
+    background: linear-gradient(180deg, #ffffff 40%, rgba(198, 241, 53, 0.85) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.7));
+    margin-bottom: 0.8rem;
+}
+
+.error-404-title {
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+}
+
+.error-404-desc {
+    font-size: 1.02rem;
+    color: var(--color-grey-light);
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto 2rem auto;
+}
+
+.error-404-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+    flex-wrap: wrap;
+}
+
+.error-404-actions .btn2-lime {
+    padding: 0.85rem 2rem !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: 576px) {
+    .error-404-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .error-404-actions .btn2-lime,
+    .error-404-actions .btn-cs-secondary {
+        width: 100%;
+        justify-content: center;
     }
 }

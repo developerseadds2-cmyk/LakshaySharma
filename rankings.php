@@ -608,7 +608,7 @@ body {
     <div class="site-container">
         <!-- Breadcrumb Navigation -->
         <nav class="rankings-breadcrumb" aria-label="Breadcrumb">
-            <a href="index2.php"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="index.php"><i class="fa-solid fa-house"></i> Home</a>
             <span class="crumb-sep">/</span>
             <span class="crumb-current">Rankings &amp; Standings</span>
         </nav>
