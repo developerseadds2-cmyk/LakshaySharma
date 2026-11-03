@@ -355,40 +355,40 @@ include_once __DIR__ . '/includes/header.php';
             <!-- Right: 4 Medals & Trophy Columns -->
             <div class="medals2-grid">
                 <!-- Gold Medal -->
-                <div class="medal2-card sec2-anim-hidden sec2-anim-up delay-1">
+                <a href="achievements#gold-medals" class="medal2-card sec2-anim-hidden sec2-anim-up delay-1" aria-label="View Gold Medals on Achievements page">
                     <div class="medal2-img-wrap">
                         <img src="assets/images/Shiny Gold Star Medal with Red Ribbon.png" alt="Shiny Gold Star Medal" class="medal2-img">
                     </div>
                     <h4 class="medal2-title">Gold Medal</h4>
                     <span class="medal2-sub">(Year)</span>
-                </div>
+                </a>
 
                 <!-- Silver Medal -->
-                <div class="medal2-card sec2-anim-hidden sec2-anim-up delay-2">
+                <a href="achievements#silver-medals" class="medal2-card sec2-anim-hidden sec2-anim-up delay-2" aria-label="View Silver Medals on Achievements page">
                     <div class="medal2-img-wrap">
                         <img src="assets/images/Silver Star Medal with Red Ribbon.png" alt="Silver Star Medal" class="medal2-img">
                     </div>
                     <h4 class="medal2-title">Silver Medal</h4>
                     <span class="medal2-sub">(Year)</span>
-                </div>
+                </a>
 
                 <!-- Bronze Medal -->
-                <div class="medal2-card sec2-anim-hidden sec2-anim-up delay-3">
+                <a href="achievements#bronze-medals" class="medal2-card sec2-anim-hidden sec2-anim-up delay-3" aria-label="View Bronze Medals on Achievements page">
                     <div class="medal2-img-wrap">
                         <img src="assets/images/Bronze Star Medal with Red Ribbon.png" alt="Bronze Star Medal" class="medal2-img">
                     </div>
                     <h4 class="medal2-title">Bronze Medal</h4>
                     <span class="medal2-sub">(Year)</span>
-                </div>
+                </a>
 
                 <!-- Championship Trophy -->
-                <div class="medal2-card sec2-anim-hidden sec2-anim-up delay-4">
+                <a href="achievements#championship-titles" class="medal2-card sec2-anim-hidden sec2-anim-up delay-4" aria-label="View Championship Titles on Achievements page">
                     <div class="medal2-img-wrap">
                         <img src="assets/images/Golden Badminton Championship Trophy.png" alt="Golden Badminton Championship Trophy" class="medal2-img">
                     </div>
                     <h4 class="medal2-title">Championship Title</h4>
                     <span class="medal2-sub">(Year)</span>
-                </div>
+                </a>
             </div>
         </div>
     </div>

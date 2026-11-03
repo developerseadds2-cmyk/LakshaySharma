@@ -1,22 +1,27 @@
 # Apache configuration for clean extensionless URLs and 404 handling
 RewriteEngine On
 
-# Ensure DirectoryIndex finds index.php automatically for root folder requests
+# Ensure DirectoryIndex finds index.php automatically for root domain / directory requests
 DirectoryIndex index.php
 
-# Redirect external direct requests from file.php to file (except POST and index.php)
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^/]+/)*([^.]+)\.php [NC]
-RewriteCond %{REQUEST_METHOD} !POST
-RewriteRule ^(.*)\.php$ $1 [R=301,L]
+# 404 Error Document Fallback
+ErrorDocument 404 coming-soon.php
 
-# Serve actual files and directories as-is
+# 1. Redirect external direct requests from file.php to extensionless (e.g., about.php -> about)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s.*?/([^/?\s]+)\.php [NC]
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %1 !^index$ [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# 2. If the request is for an existing real file or directory, serve it directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Internally rewrite clean extensionless URL to .php file if it exists
+# 3. Internally map extensionless slug to .php file if it exists (e.g., /about -> about.php)
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f [OR]
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L]
 
-# Fallback: Route non-existent URLs to custom 404 page (coming-soon.php)
+# 4. Fallback: Route any non-existent page/slug to custom 404 page (coming-soon.php)
 RewriteRule ^([a-zA-Z0-9_-]+)/?$ coming-soon.php?page=$1 [L,QSA]

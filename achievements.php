@@ -205,6 +205,7 @@ body {
 
 .achieve-category-block {
     margin-bottom: 3.5rem;
+    scroll-margin-top: 100px;
 }
 
 .achieve-block-title {
@@ -555,6 +556,7 @@ body {
 
         <!-- GOLD MEDALS & CHAMPIONSHIPS TABLE -->
         <div class="achieve-category-block" id="gold-medals">
+            <span id="championship-titles" style="display:block; position:relative; top:-90px; visibility:hidden;"></span>
             <h3 class="achieve-block-title">
                 <span style="color: #eab308;"><i class="fa-solid fa-medal"></i></span>
                 <span>Gold Medals &amp; Championship Titles</span>

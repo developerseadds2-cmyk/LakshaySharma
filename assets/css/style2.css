@@ -742,6 +742,9 @@
     padding: 0.5rem 0.25rem;
     border-right: 1px solid rgba(11, 21, 40, 0.08);
     transition: var(--transition);
+    text-decoration: none !important;
+    color: inherit !important;
+    cursor: pointer;
 }
 
 .medal2-card:last-child {
@@ -749,7 +752,11 @@
 }
 
 .medal2-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+}
+
+.medal2-card:hover .medal2-title {
+    color: var(--color-blue);
 }
 
 .medal2-img-wrap {
