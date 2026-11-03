@@ -442,7 +442,7 @@ body {
             <!-- Right: Biography & Journey Overview -->
             <div>
                 <h2 class="about-bio-lead">
-                    A dedicated athlete from Ludhiana, Punjab, striving for excellence on the world badminton circuit.
+                    A rising force in Indian badminton, his talent, determination, and achievements across competitive circuits fuel his pursuit of Olympic glory. Discover the values and play that drive Lakshay Sharma.
                 </h2>
                 <p class="about-bio-text">
                     Born in 2005 in Ludhiana, Lakshay Sharma took to the badminton court at a very young age. Coached exclusively by his father, Mangat Rai Sharma (an NIS-certified national badminton coach), Lakshay developed a distinctive, attacking, and aggressive playing style backed by relentless stamina.

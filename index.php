@@ -177,11 +177,11 @@ include_once __DIR__ . '/includes/header.php';
                 </div>
 
                 <h2 class="sec2-title-dark">
-                    The Person<br>Behind The Racket.
+                    The Person<br class="desktop-only-br"> Behind The Racket.
                 </h2>
 
                 <p class="sec2-desc-dark">
-                    Discover the personality, passion, playing style and values that drive Lakshay Sharma.
+                    A rising force in Indian badminton, his talent, determination, and achievements across competitive circuits fuel his pursuit of Olympic glory. Discover the values and play that drive Lakshay Sharma.
                 </p>
 
                 <div>
@@ -201,29 +201,29 @@ include_once __DIR__ . '/includes/header.php';
                     </div>
                     <div>
                         <h4 class="feature2-title">Playing Style</h4>
-                        <p class="feature2-desc">Aggressive & Attacking</p>
+                        <p class="feature2-desc">Swift Baseline &amp; Volley Attacker</p>
                     </div>
                 </div>
 
                 <!-- Feature 2 -->
                 <div class="feature2-row">
                     <div class="feature2-icon">
-                        <i class="fa-solid fa-trophy"></i>
+                        <i class="fa-solid fa-bolt"></i>
                     </div>
                     <div>
-                        <h4 class="feature2-title">Values</h4>
-                        <p class="feature2-desc">Hard Work & Humility</p>
+                        <h4 class="feature2-title">Athletic Profile</h4>
+                        <p class="feature2-desc">Athletically Gifted &bull; Child Prodigy</p>
                     </div>
                 </div>
 
                 <!-- Feature 3 -->
                 <div class="feature2-row">
                     <div class="feature2-icon">
-                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-medal"></i>
                     </div>
                     <div>
-                        <h4 class="feature2-title">Passion</h4>
-                        <p class="feature2-desc">Badminton</p>
+                        <h4 class="feature2-title">Enviable Record</h4>
+                        <p class="feature2-desc">A Cut Above the Rest Across Circuits</p>
                     </div>
                 </div>
             </div>
