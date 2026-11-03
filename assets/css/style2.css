@@ -1275,7 +1275,8 @@
     .btn2-outline-dark,
     .btn-know-more {
         align-self: center !important;
-        margin: 0 auto !important;
+        margin: 0 auto 30px auto !important;
+        margin-bottom: 30px !important;
         display: inline-flex !important;
         justify-content: center !important;
     }
@@ -1284,7 +1285,7 @@
     .hero-stats-row,
     .hero2-stats-row {
         justify-content: center !important;
-        margin: 1.5rem auto !important;
+        margin: 0.6rem auto 1.3rem auto !important;
     }
 
     /* Remove floating green dots on phone to maintain clean vertical alignment */

@@ -25,9 +25,8 @@ body {
 .page-header-dark {
     position: relative;
     padding: 3.8rem 0 3.2rem 0;
-    background: radial-gradient(circle at 85% 15%, rgba(23, 105, 255, 0.28) 0%, transparent 55%),
-                radial-gradient(circle at 10% 85%, rgba(198, 241, 53, 0.12) 0%, transparent 45%),
-                linear-gradient(180deg, #101C35 0%, #091020 100%);
+    background: linear-gradient(180deg, rgba(16, 28, 53, 0.88) 0%, rgba(9, 16, 32, 0.94) 100%),
+                url('assets/images/Intense Badminton Match in a Stadium.png') center center / cover no-repeat;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
 }
@@ -36,9 +35,11 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background: radial-gradient(circle at 85% 15%, rgba(23, 105, 255, 0.35) 0%, transparent 60%),
+                radial-gradient(circle at 10% 85%, rgba(198, 241, 53, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: auto, auto, 50px 50px, 50px 50px;
     pointer-events: none;
 }
 
@@ -322,18 +323,55 @@ body {
     }
 
     .achieve-summary-grid {
-        grid-template-columns: 1fr;
-        gap: 1.1rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
 
     .achieve-card-light {
-        padding: 1.6rem 1.4rem;
+        padding: 1.25rem 0.75rem;
+        border-radius: 14px;
+    }
+
+    .achieve-img-wrap {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0.75rem;
+    }
+
+    .achieve-count-num {
+        font-size: 2rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .achieve-count-label {
+        font-size: 0.92rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .achieve-count-sub {
+        font-size: 0.75rem;
+        line-height: 1.3;
     }
 
     .achieve-block-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
         text-align: center;
-        font-size: 1.5rem;
+        gap: 0.4rem;
+        font-size: clamp(1.3rem, 5.2vw, 1.6rem);
+        line-height: 1.25;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .achieve-block-title span:first-child {
+        font-size: 1.85rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
     }
 
     /* Transform achievement tables into responsive mobile cards */
@@ -375,43 +413,61 @@ body {
 
     .achieve-table td {
         display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 0.45rem 0 !important;
-        border-bottom: 1px dashed rgba(11, 21, 40, 0.08) !important;
-        font-size: 0.92rem !important;
-        text-align: right !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        padding: 0.65rem 0 !important;
+        border-bottom: 1px dashed rgba(11, 21, 40, 0.1) !important;
+        font-size: 0.95rem !important;
+        line-height: 1.45 !important;
+        text-align: left !important;
+        gap: 0.25rem !important;
+        color: #0f172a !important;
+    }
+
+    .achieve-table td strong {
+        color: #0b1528 !important;
+        font-size: 1.05rem !important;
     }
 
     .achieve-table td:last-child {
         border-bottom: none !important;
-        padding-top: 0.6rem !important;
+        padding-top: 0.75rem !important;
+        align-items: center !important;
         justify-content: center !important;
+        width: 100% !important;
+        text-align: center !important;
     }
 
     .achieve-table td:nth-child(1)::before {
         content: "Year";
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         font-weight: 800;
         text-transform: uppercase;
         color: #64748b;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.75px;
         text-align: left !important;
     }
 
     .achieve-table td:nth-child(2)::before {
         content: "Tournament";
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         font-weight: 800;
         text-transform: uppercase;
         color: #64748b;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.75px;
         text-align: left !important;
     }
 
     .achieve-table td:nth-child(3)::before {
         content: "Category";
-        font-size: 0.75rem;
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #64748b;
+        letter-spacing: 0.75px;
+        text-align: left !important;
+    }
         font-weight: 800;
         text-transform: uppercase;
         color: #64748b;
@@ -497,8 +553,8 @@ body {
 <section class="achieve-detail-section">
     <div class="site-container">
 
-        <!-- GOLD MEDALS TABLE -->
-        <div class="achieve-category-block">
+        <!-- GOLD MEDALS & CHAMPIONSHIPS TABLE -->
+        <div class="achieve-category-block" id="gold-medals">
             <h3 class="achieve-block-title">
                 <span style="color: #eab308;"><i class="fa-solid fa-medal"></i></span>
                 <span>Gold Medals &amp; Championship Titles</span>
@@ -581,7 +637,7 @@ body {
         </div>
 
         <!-- SILVER MEDALS TABLE -->
-        <div class="achieve-category-block">
+        <div class="achieve-category-block" id="silver-medals">
             <h3 class="achieve-block-title">
                 <span style="color: #64748b;"><i class="fa-solid fa-medal"></i></span>
                 <span>Silver Medals &amp; Runner-Up Podiums</span>
@@ -640,7 +696,7 @@ body {
         </div>
 
         <!-- BRONZE MEDALS TABLE -->
-        <div class="achieve-category-block">
+        <div class="achieve-category-block" id="bronze-medals">
             <h3 class="achieve-block-title">
                 <span style="color: #d97706;"><i class="fa-solid fa-medal"></i></span>
                 <span>Bronze Medals &amp; International Podium Finishes</span>

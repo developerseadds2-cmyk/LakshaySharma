@@ -24,9 +24,8 @@ body {
 .rankings-page-header-dark {
     position: relative;
     padding: 3.8rem 0 3.2rem 0;
-    background: radial-gradient(circle at 85% 15%, rgba(23, 105, 255, 0.28) 0%, transparent 55%),
-                radial-gradient(circle at 10% 85%, rgba(198, 241, 53, 0.12) 0%, transparent 45%),
-                linear-gradient(180deg, #101C35 0%, #091020 100%);
+    background: linear-gradient(180deg, rgba(16, 28, 53, 0.88) 0%, rgba(9, 16, 32, 0.94) 100%),
+                url('assets/images/Intense Badminton Match in a Stadium.png') center center / cover no-repeat;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
 }
@@ -36,9 +35,11 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background: radial-gradient(circle at 85% 15%, rgba(23, 105, 255, 0.35) 0%, transparent 60%),
+                radial-gradient(circle at 10% 85%, rgba(198, 241, 53, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: auto, auto, 50px 50px, 50px 50px;
     pointer-events: none;
 }
 
@@ -421,24 +422,74 @@ body {
     }
 
     .rank-metrics-grid-light {
-        grid-template-columns: 1fr;
-        gap: 1.1rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
 
     .rank-metric-card-light {
-        padding: 1.6rem 1.4rem;
+        padding: 1.25rem 0.75rem;
+        border-radius: 14px;
         text-align: center;
     }
 
     .rank-metric-top-light {
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        gap: 1rem;
+        gap: 0.4rem;
+        margin-bottom: 0.65rem;
+    }
+
+    .rank-metric-icon-light {
+        width: 38px;
+        height: 38px;
+        font-size: 1.05rem;
+        border-radius: 10px;
+    }
+
+    .rank-badge-light {
+        font-size: 0.62rem;
+        padding: 0.2rem 0.55rem;
+        letter-spacing: 0.5px;
+    }
+
+    .rank-metric-value-light {
+        font-size: 2rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .rank-metric-label-light {
+        font-size: 0.92rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .rank-metric-sub-light {
+        font-size: 0.75rem;
+        line-height: 1.3;
     }
 
     .rankings-block-title-light {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         justify-content: center;
         text-align: center;
-        font-size: 1.5rem;
+        white-space: nowrap;
+        gap: 0.5rem;
+        font-size: clamp(0.95rem, 4.3vw, 1.3rem);
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        padding: 0 0.25rem;
+        width: 100%;
+    }
+
+    .rankings-block-title-light i {
+        font-size: 1.15rem;
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
     }
 
     .milestone-item-light {
@@ -482,51 +533,66 @@ body {
         border-radius: 14px !important;
         padding: 1.25rem 1.4rem !important;
         box-shadow: 0 4px 15px rgba(11, 21, 40, 0.04) !important;
-        text-align: center !important;
-        gap: 0.5rem !important;
+        gap: 0.45rem !important;
     }
 
     .rankings-table-light td {
         display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 0.5rem 0 !important;
-        border-bottom: 1px dashed rgba(11, 21, 40, 0.08) !important;
-        font-size: 0.92rem !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        padding: 0.65rem 0 !important;
+        border-bottom: 1px dashed rgba(11, 21, 40, 0.1) !important;
+        font-size: 0.95rem !important;
+        line-height: 1.45 !important;
+        text-align: left !important;
+        gap: 0.25rem !important;
+        color: #0f172a !important;
+    }
+
+    .rankings-table-light td strong {
+        color: #0b1528 !important;
+        font-size: 1.05rem !important;
     }
 
     .rankings-table-light td:last-child {
         border-bottom: none !important;
-        padding-top: 0.6rem !important;
+        padding-top: 0.75rem !important;
+        align-items: center !important;
         justify-content: center !important;
+        width: 100% !important;
+        text-align: center !important;
     }
 
     /* Mobile labels for table cells */
     .rankings-table-light td:nth-child(1)::before {
         content: "Governing Body";
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         font-weight: 800;
         text-transform: uppercase;
         color: #64748b;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.75px;
+        text-align: left !important;
     }
 
     .rankings-table-light td:nth-child(2)::before {
         content: "Category";
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         font-weight: 800;
         text-transform: uppercase;
         color: #64748b;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.75px;
+        text-align: left !important;
     }
 
     .rankings-table-light td:nth-child(3)::before {
         content: "Standing";
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         font-weight: 800;
         text-transform: uppercase;
         color: #64748b;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.75px;
+        text-align: left !important;
     }
 
     .td-rank-highlight-light {

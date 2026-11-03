@@ -112,14 +112,72 @@
         });
     }
 
-    // 4. Mobile Menu Toggle
+    // 4. Mobile Menu Toggle (Slide in from Right & Hamburger-to-Cross transform)
     function initMobileNav() {
         var toggleBtn = document.getElementById('mobile-toggle');
+        var drawer = document.getElementById('mobile-drawer');
+        var drawerClose = document.getElementById('mobile-drawer-close');
         var navMenu = document.getElementById('primary-navigation');
+        var backdrop = document.getElementById('mobile-nav-backdrop');
 
-        if (toggleBtn && navMenu) {
-            toggleBtn.addEventListener('click', function() {
-                navMenu.classList.toggle('show');
+        if (toggleBtn) {
+            function openNav() {
+                if (drawer) drawer.classList.add('show');
+                if (navMenu) navMenu.classList.add('show');
+                toggleBtn.classList.add('active');
+                if (backdrop) backdrop.classList.add('show');
+                document.body.classList.add('mobile-nav-open');
+            }
+
+            function closeNav() {
+                if (drawer) drawer.classList.remove('show');
+                if (navMenu) navMenu.classList.remove('show');
+                toggleBtn.classList.remove('active');
+                if (backdrop) backdrop.classList.remove('show');
+                document.body.classList.remove('mobile-nav-open');
+            }
+
+            function toggleNav() {
+                var isOpen = drawer ? drawer.classList.contains('show') : (navMenu && navMenu.classList.contains('show'));
+                if (isOpen) {
+                    closeNav();
+                } else {
+                    openNav();
+                }
+            }
+
+            toggleBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleNav();
+            });
+
+            if (drawerClose) {
+                drawerClose.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closeNav();
+                });
+            }
+
+            if (backdrop) {
+                backdrop.addEventListener('click', closeNav);
+            }
+
+            // Close when clicking any menu link
+            var targetNav = drawer || navMenu;
+            if (targetNav) {
+                var navLinks = targetNav.querySelectorAll('.nav-link');
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        setTimeout(closeNav, 100);
+                    });
+                });
+            }
+
+            // Close on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeNav();
+                }
             });
         }
     }
@@ -217,7 +275,37 @@
         }
     }
 
+    // 0. Site Preloader Dismissal
+    function initPreloader() {
+        var preloader = document.getElementById('site-preloader');
+        if (!preloader) return;
+
+        var dismissed = false;
+        function dismissPreloader() {
+            if (dismissed) return;
+            dismissed = true;
+            preloader.classList.add('preloader-hidden');
+            setTimeout(function() {
+                if (preloader.parentNode) {
+                    preloader.parentNode.removeChild(preloader);
+                }
+            }, 600);
+        }
+
+        // Dismiss smoothly when page resources finish loading
+        if (document.readyState === 'complete') {
+            setTimeout(dismissPreloader, 350);
+        } else {
+            window.addEventListener('load', function() {
+                setTimeout(dismissPreloader, 350);
+            });
+            // Fallback timeout so user is never stuck
+            setTimeout(dismissPreloader, 2500);
+        }
+    }
+
     // Initialize all
+    initPreloader();
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
             initCounters();

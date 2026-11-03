@@ -25,9 +25,8 @@ body {
 .page-header-dark {
     position: relative;
     padding: 3.8rem 0 3.2rem 0;
-    background: radial-gradient(circle at 85% 15%, rgba(23, 105, 255, 0.28) 0%, transparent 55%),
-                radial-gradient(circle at 10% 85%, rgba(198, 241, 53, 0.12) 0%, transparent 45%),
-                linear-gradient(180deg, #101C35 0%, #091020 100%);
+    background: linear-gradient(180deg, rgba(16, 28, 53, 0.88) 0%, rgba(9, 16, 32, 0.94) 100%),
+                url('assets/images/Intense Badminton Match in a Stadium.png') center center / cover no-repeat;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
 }
@@ -36,9 +35,11 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background: radial-gradient(circle at 85% 15%, rgba(23, 105, 255, 0.35) 0%, transparent 60%),
+                radial-gradient(circle at 10% 85%, rgba(198, 241, 53, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: auto, auto, 50px 50px, 50px 50px;
     pointer-events: none;
 }
 
@@ -108,6 +109,10 @@ body {
     z-index: 2;
 }
 
+.page-main-title-dark .mobile-only-br {
+    display: none;
+}
+
 /* ==========================================================================
    2. CONTENT SECTIONS (LIGHT MODE)
    ========================================================================== */
@@ -156,6 +161,10 @@ body {
     color: #0b1528;
     line-height: 1.5;
     margin-bottom: 1.25rem;
+}
+
+.about-bio-lead .bio-lead-br {
+    display: none;
 }
 
 .about-bio-text {
@@ -272,7 +281,7 @@ body {
 @media (max-width: 1024px) {
     .about-intro-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 1.25rem;
     }
 
     .pillars-grid {
@@ -283,28 +292,61 @@ body {
 
 @media (max-width: 768px) {
     .page-header-dark {
-        padding: 2.8rem 0 2.4rem 0;
+        padding: 2.2rem 0 1.8rem 0;
         text-align: center;
     }
 
-    .page-breadcrumb,
+    .page-breadcrumb {
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
     .page-kicker-dark {
         justify-content: center;
+        margin-bottom: 0.6rem;
     }
 
     .page-main-title-dark {
-        font-size: clamp(2rem, 7vw, 2.7rem);
+        font-size: clamp(1.8rem, 6.8vw, 2.3rem);
+        line-height: 1.15;
         text-align: center;
+        white-space: normal;
+    }
+
+    .page-main-title-dark .mobile-only-br {
+        display: block;
     }
 
     .about-intro-section {
-        padding: 2.5rem 0;
+        padding: 2rem 0;
         text-align: center;
     }
 
-    .about-bio-lead,
-    .about-bio-text {
+    .about-intro-grid {
+        gap: 1.25rem;
+    }
+
+    .about-photo-wrapper {
+        margin-bottom: 0;
+    }
+
+    .about-bio-lead {
         text-align: center;
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.9rem;
+        line-height: 1.4;
+        font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+    }
+
+    .about-bio-text {
+        text-align: left;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #475569;
+        margin-bottom: 1.25rem;
     }
 
     .bio-facts-grid {
@@ -312,9 +354,51 @@ body {
         text-align: center;
     }
 
+    .about-pillars-section {
+        padding: 3rem 0;
+    }
+
+    .about-section-heading {
+        margin-bottom: 2rem;
+    }
+
+    .about-section-title {
+        font-size: clamp(1.45rem, 5.8vw, 1.95rem);
+        white-space: nowrap;
+        text-align: center;
+        line-height: 1.15;
+    }
+
+    .about-section-sub {
+        font-size: 0.92rem;
+        line-height: 1.5;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
     .pillar-card {
         align-items: center;
         text-align: center;
+        padding: 1.6rem 1.25rem;
+        border-radius: 16px;
+    }
+
+    .pillar-icon {
+        margin-bottom: 1rem;
+        width: 46px;
+        height: 46px;
+        font-size: 1.2rem;
+    }
+
+    .pillar-title {
+        font-size: 1.12rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.25;
+    }
+
+    .pillar-desc {
+        font-size: 0.9rem;
+        line-height: 1.55;
     }
 }
 </style>
@@ -339,7 +423,7 @@ body {
 
         <!-- Main Title -->
         <h1 class="page-main-title-dark">
-            The Person Behind The Racket
+            The Person Behind<br class="mobile-only-br"> The Racket
         </h1>
     </div>
 </section>

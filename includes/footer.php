@@ -4,12 +4,11 @@
         <div class="site-container">
             <!-- Main Horizontal Layout from Mockup -->
             <div class="footer-main-row">
-                <!-- Column 1: Brand Typography -->
+                <!-- Column 1: Brand Typography & Logo -->
                 <div class="footer-col-brand">
-                    <h3 class="footer-brand-title">
-                        <span class="brand-white">LAKSHAY</span>
-                        <span class="brand-lime">SHARMA</span>
-                    </h3>
+                    <a href="<?php echo isset($homeUrl) ? htmlspecialchars($homeUrl) : 'index.php'; ?>" class="footer-brand-logo-link" aria-label="Lakshay Sharma Home">
+                        <img src="assets/images/Lakshay Sharma Badminton Logo.png" alt="Lakshay Sharma Badminton" class="footer-brand-logo-img">
+                    </a>
                     <div class="footer-tagline-wrap">
                         <p class="footer-tagline">Play for a bigger dream</p>
                         <span class="footer-tagline-slash"></span>

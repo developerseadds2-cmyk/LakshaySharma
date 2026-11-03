@@ -24,9 +24,8 @@ body {
 .page-header-dark {
     position: relative;
     padding: 3.8rem 0 3.2rem 0;
-    background: radial-gradient(circle at 85% 15%, rgba(23, 105, 255, 0.28) 0%, transparent 55%),
-                radial-gradient(circle at 10% 85%, rgba(198, 241, 53, 0.12) 0%, transparent 45%),
-                linear-gradient(180deg, #101C35 0%, #091020 100%);
+    background: linear-gradient(180deg, rgba(16, 28, 53, 0.88) 0%, rgba(9, 16, 32, 0.94) 100%),
+                url('assets/images/Intense Badminton Match in a Stadium.png') center center / cover no-repeat;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
 }
@@ -35,9 +34,11 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background: radial-gradient(circle at 85% 15%, rgba(23, 105, 255, 0.35) 0%, transparent 60%),
+                radial-gradient(circle at 10% 85%, rgba(198, 241, 53, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: auto, auto, 50px 50px, 50px 50px;
     pointer-events: none;
 }
 
@@ -305,16 +306,46 @@ body {
     }
 
     .contact-form-card {
-        padding: 1.8rem 1.4rem;
+        padding: 1.5rem 1.25rem;
+        border-radius: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-form-card form {
+        width: 100%;
+        text-align: left;
     }
 
     .form-group-row {
         grid-template-columns: 1fr;
         gap: 0;
+        margin-bottom: 0;
+    }
+
+    .form-field {
+        margin-bottom: 1.25rem;
+        width: 100%;
+        text-align: left;
+    }
+
+    .form-field label {
+        text-align: left;
+        margin-bottom: 0.4rem;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        text-align: left;
     }
 
     .btn-submit-contact {
         width: 100%;
+        box-sizing: border-box;
     }
 }
 </style>
