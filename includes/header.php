@@ -5,7 +5,7 @@ if (!isset($currentPage)) {
 }
 // Support custom home link (e.g. index2.php for Concept 2)
 if (!isset($homeUrl)) {
-    $homeUrl = 'index.php';
+    $homeUrl = 'index';
 }
 ?>
 <!DOCTYPE html>
@@ -61,22 +61,22 @@ if (!isset($homeUrl)) {
             <nav class="desktop-nav">
                 <ul class="nav-menu" id="primary-navigation-desktop">
                     <li>
-                        <a href="index.php" class="nav-link <?php echo ($currentPage === 'home') ? 'active' : ''; ?>">
+                        <a href="index" class="nav-link <?php echo ($currentPage === 'home') ? 'active' : ''; ?>">
                             Home
                         </a>
                     </li>
-                    <li><a href="about.php"
+                    <li><a href="about"
                             class="nav-link <?php echo ($currentPage === 'about') ? 'active' : ''; ?>">About</a></li>
-                    <li><a href="achievements.php"
+                    <li><a href="achievements"
                             class="nav-link <?php echo ($currentPage === 'achievements') ? 'active' : ''; ?>">Achievements</a>
                     </li>
-                    <li><a href="rankings.php"
+                    <li><a href="rankings"
                             class="nav-link <?php echo ($currentPage === 'rankings') ? 'active' : ''; ?>">Rankings</a>
                     </li>
-                    <li><a href="gallery.php"
+                    <li><a href="gallery"
                             class="nav-link <?php echo in_array($currentPage, ['gallery', 'media']) ? 'active' : ''; ?>">Gallery
                             / Media</a></li>
-                    <li><a href="contact.php"
+                    <li><a href="contact"
                             class="nav-link <?php echo ($currentPage === 'contact') ? 'active' : ''; ?>">Contact</a>
                     </li>
                 </ul>
@@ -119,22 +119,22 @@ if (!isset($homeUrl)) {
         </div>
         <ul class="drawer-nav-menu" id="primary-navigation">
             <li>
-                <a href="index.php" class="nav-link <?php echo ($currentPage === 'home') ? 'active' : ''; ?>">
+                <a href="index" class="nav-link <?php echo ($currentPage === 'home') ? 'active' : ''; ?>">
                     Home
                 </a>
             </li>
-            <li><a href="about.php"
+            <li><a href="about"
                     class="nav-link <?php echo ($currentPage === 'about') ? 'active' : ''; ?>">About</a></li>
-            <li><a href="achievements.php"
+            <li><a href="achievements"
                     class="nav-link <?php echo ($currentPage === 'achievements') ? 'active' : ''; ?>">Achievements</a>
             </li>
-            <li><a href="rankings.php"
+            <li><a href="rankings"
                     class="nav-link <?php echo ($currentPage === 'rankings') ? 'active' : ''; ?>">Rankings</a>
             </li>
-            <li><a href="gallery.php"
+            <li><a href="gallery"
                     class="nav-link <?php echo in_array($currentPage, ['gallery', 'media']) ? 'active' : ''; ?>">Gallery
                     / Media</a></li>
-            <li><a href="contact.php"
+            <li><a href="contact"
                     class="nav-link <?php echo ($currentPage === 'contact') ? 'active' : ''; ?>">Contact</a>
             </li>
         </ul>

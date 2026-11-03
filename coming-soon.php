@@ -13,7 +13,7 @@ if (!$requestedPage && isset($pageName)) {
 
 $pageTitle = "404 - Page Not Found | Lakshay Sharma";
 $currentPage = "404";
-$homeUrl = "index.php";
+$homeUrl = "index";
 
 include_once __DIR__ . '/includes/header.php';
 ?>
@@ -49,11 +49,11 @@ include_once __DIR__ . '/includes/header.php';
 
             <!-- Actions -->
             <div class="error-404-actions">
-                <a href="index.php" class="btn2-lime">
+                <a href="index" class="btn2-lime">
                     <i class="fa-solid fa-house"></i>
                     <span>Back To Home</span>
                 </a>
-                <a href="contact.php" class="btn-cs-secondary">
+                <a href="contact" class="btn-cs-secondary">
                     <i class="fa-regular fa-envelope"></i>
                     <span>Contact Us</span>
                 </a>

@@ -6,7 +6,7 @@
             <div class="footer-main-row">
                 <!-- Column 1: Brand Typography & Logo -->
                 <div class="footer-col-brand">
-                    <a href="<?php echo isset($homeUrl) ? htmlspecialchars($homeUrl) : 'index.php'; ?>" class="footer-brand-logo-link" aria-label="Lakshay Sharma Home">
+                    <a href="<?php echo isset($homeUrl) ? htmlspecialchars($homeUrl) : 'index'; ?>" class="footer-brand-logo-link" aria-label="Lakshay Sharma Home">
                         <img src="assets/images/Lakshay Sharma Badminton Logo.png" alt="Lakshay Sharma Badminton" class="footer-brand-logo-img">
                     </a>
                     <div class="footer-tagline-wrap">
@@ -21,7 +21,7 @@
                 <div class="footer-col-contact">
                     <h4 class="footer-col-heading">Get in Touch</h4>
                     <p class="footer-contact-desc">For collaborations, sponsorships or professional enquiries.</p>
-                    <a href="contact.php" class="btn-footer-contact">
+                    <a href="contact" class="btn-footer-contact">
                         <i class="fa-regular fa-envelope"></i>
                         <span>Contact Us</span>
                         <i class="fa-solid fa-arrow-right"></i>

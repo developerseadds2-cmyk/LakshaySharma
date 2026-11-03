@@ -6,7 +6,7 @@
  */
 $pageTitle = "Lakshay Sharma | Badminton Player (Concept 2)";
 $currentPage = "home";
-$homeUrl = "index.php";
+$homeUrl = "index";
 include_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -185,7 +185,7 @@ include_once __DIR__ . '/includes/header.php';
                 </p>
 
                 <div>
-                    <a href="about.php" class="btn2-outline-dark">
+                    <a href="about" class="btn2-outline-dark">
                         <span>Know More</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -263,7 +263,7 @@ include_once __DIR__ . '/includes/header.php';
                 </p>
 
                 <div>
-                    <a href="about.php" class="btn2-lime">
+                    <a href="about" class="btn2-lime">
                         <span>Discover My Journey</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -345,7 +345,7 @@ include_once __DIR__ . '/includes/header.php';
                 </p>
 
                 <div>
-                    <a href="achievements.php" class="btn2-lime">
+                    <a href="achievements" class="btn2-lime">
                         <span>View All Achievements</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -424,7 +424,7 @@ include_once __DIR__ . '/includes/header.php';
                 </p>
 
                 <div>
-                    <a href="gallery.php" class="btn2-lime">
+                    <a href="gallery" class="btn2-lime">
                         <span>Explore Gallery</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -480,7 +480,7 @@ include_once __DIR__ . '/includes/header.php';
                 <p class="connect2-desc">
                     Interested in collaborations, sponsorships or simply a hello? Let's connect!
                 </p>
-                <a href="contact.php" class="btn2-lime">
+                <a href="contact" class="btn2-lime">
                     <span>Get In Touch</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>

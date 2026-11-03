@@ -376,7 +376,7 @@ body {
     <div class="site-container">
         <!-- Breadcrumb Navigation -->
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
-            <a href="index.php"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="index"><i class="fa-solid fa-house"></i> Home</a>
             <span class="crumb-sep">/</span>
             <span class="crumb-current">Gallery &amp; Media</span>
         </nav>
