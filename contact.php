@@ -244,6 +244,38 @@ body {
     box-shadow: 0 0 0 3px rgba(23, 105, 255, 0.15);
 }
 
+.form-field .field-error {
+    display: none;
+    font-size: 0.8rem;
+    color: #ef4444;
+    font-weight: 600;
+    margin-top: 0.4rem;
+}
+
+.form-field.has-error input,
+.form-field.has-error textarea {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+}
+
+.form-field.has-error .field-error {
+    display: block;
+}
+
+.form-success-banner {
+    display: none;
+    padding: 1.1rem 1.4rem;
+    background: #ecfdf5;
+    border: 1px solid #10b981;
+    border-radius: 12px;
+    color: #065f46;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 .btn-submit-contact {
     display: inline-flex;
     align-items: center;
@@ -420,34 +452,43 @@ body {
 
             <!-- Right Column: Interactive Contact Form -->
             <div class="contact-form-card">
-                <form action="contact.php" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out! Your message has been received.');">
+                <div class="form-success-banner" id="form-success-msg" role="alert">
+                    <i class="fa-solid fa-circle-check" style="font-size: 1.25rem; color: #10b981;"></i>
+                    <span id="form-success-text">Thank you! Your message has been sent successfully. We will get back to you shortly.</span>
+                </div>
+
+                <div class="form-success-banner" id="form-error-msg" role="alert" style="background: #fef2f2; border-color: #ef4444; color: #991b1b; display: none;">
+                    <i class="fa-solid fa-circle-exclamation" style="font-size: 1.25rem; color: #ef4444;"></i>
+                    <span id="form-error-text">Unable to send message. Please try again.</span>
+                </div>
+
+                <form id="contact-form" novalidate>
                     <div class="form-group-row">
-                        <div class="form-field">
+                        <div class="form-field" id="field-wrap-name">
                             <label for="contact-name">Your Full Name</label>
-                            <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                            <input type="text" id="contact-name" name="name" placeholder="John Doe" minlength="2" maxlength="80" autocomplete="name" required>
+                            <span class="field-error" id="error-name">Please enter your full name (minimum 2 characters).</span>
                         </div>
-                        <div class="form-field">
+                        <div class="form-field" id="field-wrap-email">
                             <label for="contact-email">Email Address</label>
-                            <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                            <input type="email" id="contact-email" name="email" placeholder="john@example.com" maxlength="120" autocomplete="email" required>
+                            <span class="field-error" id="error-email">Please enter a valid email address.</span>
                         </div>
                     </div>
 
-                    <div class="form-field">
-                        <label for="contact-subject">Inquiry Type</label>
-                        <select id="contact-subject" name="subject">
-                            <option value="sponsorship">Sponsorship &amp; Brand Partnership</option>
-                            <option value="media">Media &amp; Press Interview</option>
-                            <option value="exhibition">Exhibition Match / Event Appearance</option>
-                            <option value="general">General Message / Fan Greeting</option>
-                        </select>
+                    <div class="form-field" id="field-wrap-phone">
+                        <label for="contact-phone">Phone Number</label>
+                        <input type="tel" id="contact-phone" name="phone" placeholder="+91 98765 43210" pattern="[\+]?[0-9\s\-\(\)]{7,20}" maxlength="20" autocomplete="tel" required>
+                        <span class="field-error" id="error-phone">Please enter a valid phone number (digits and optional country code, min 7 digits).</span>
                     </div>
 
-                    <div class="form-field">
+                    <div class="form-field" id="field-wrap-message">
                         <label for="contact-message">Message</label>
-                        <textarea id="contact-message" name="message" rows="5" placeholder="Share your message or proposal details..." required></textarea>
+                        <textarea id="contact-message" name="message" rows="5" placeholder="Share your message or proposal details..." minlength="10" maxlength="2000" required></textarea>
+                        <span class="field-error" id="error-message">Please enter your message (minimum 10 characters).</span>
                     </div>
 
-                    <button type="submit" class="btn-submit-contact">
+                    <button type="submit" class="btn-submit-contact" id="btn-submit-contact">
                         <span>Send Message</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
@@ -456,6 +497,159 @@ body {
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const phoneInput = document.getElementById('contact-phone');
+    const messageInput = document.getElementById('contact-message');
+    const successMsg = document.getElementById('form-success-msg');
+    const successText = document.getElementById('form-success-text');
+    const errorMsg = document.getElementById('form-error-msg');
+    const errorText = document.getElementById('form-error-text');
+    const submitBtn = document.getElementById('btn-submit-contact');
+
+    function setFieldError(input, errorId, hasError) {
+        const fieldWrap = input.closest('.form-field');
+        if (!fieldWrap) return;
+        if (hasError) {
+            fieldWrap.classList.add('has-error');
+        } else {
+            fieldWrap.classList.remove('has-error');
+        }
+    }
+
+    function validateName() {
+        const val = nameInput.value.trim();
+        const valid = val.length >= 2 && val.length <= 80;
+        setFieldError(nameInput, 'error-name', !valid);
+        return valid;
+    }
+
+    function validateEmail() {
+        const val = emailInput.value.trim();
+        // RFC 5322 compatible regex
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+        const valid = emailRegex.test(val);
+        setFieldError(emailInput, 'error-email', !valid);
+        return valid;
+    }
+
+    function validatePhone() {
+        const val = phoneInput.value.trim();
+        // Count total numeric digits
+        const digits = val.replace(/\D/g, '');
+        // Allow optional leading '+', digits, spaces, parentheses, dashes; must have 7 to 15 digits (ITU E.164)
+        const formatValid = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]*$/.test(val);
+        const valid = formatValid && digits.length >= 7 && digits.length <= 15;
+        setFieldError(phoneInput, 'error-phone', !valid);
+        return valid;
+    }
+
+    function validateMessage() {
+        const val = messageInput.value.trim();
+        const valid = val.length >= 10 && val.length <= 2000;
+        setFieldError(messageInput, 'error-message', !valid);
+        return valid;
+    }
+
+    // Real-time validation on user blur & input
+    nameInput.addEventListener('blur', validateName);
+    nameInput.addEventListener('input', function () {
+        if (nameInput.closest('.form-field').classList.contains('has-error')) validateName();
+    });
+
+    emailInput.addEventListener('blur', validateEmail);
+    emailInput.addEventListener('input', function () {
+        if (emailInput.closest('.form-field').classList.contains('has-error')) validateEmail();
+    });
+
+    phoneInput.addEventListener('blur', validatePhone);
+    phoneInput.addEventListener('input', function () {
+        if (phoneInput.closest('.form-field').classList.contains('has-error')) validatePhone();
+    });
+
+    messageInput.addEventListener('blur', validateMessage);
+    messageInput.addEventListener('input', function () {
+        if (messageInput.closest('.form-field').classList.contains('has-error')) validateMessage();
+    });
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const isNameValid = validateName();
+        const isEmailValid = validateEmail();
+        const isPhoneValid = validatePhone();
+        const isMessageValid = validateMessage();
+
+        if (!isNameValid || !isEmailValid || !isPhoneValid || !isMessageValid) {
+            // Focus on first invalid input
+            const firstInvalid = form.querySelector('.has-error input, .has-error textarea');
+            if (firstInvalid) firstInvalid.focus();
+            return;
+        }
+
+        // Disable button while processing
+        submitBtn.disabled = true;
+        const originalBtnHtml = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending...</span>';
+
+        // Hide previous messages
+        successMsg.style.display = 'none';
+        errorMsg.style.display = 'none';
+
+        // Send AJAX request to send-contact.php
+        const formData = new FormData(form);
+
+        fetch('send-contact.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+
+            if (data.success) {
+                form.reset();
+                if (data.message && successText) successText.textContent = data.message;
+                successMsg.style.display = 'flex';
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                setTimeout(function () {
+                    successMsg.style.display = 'none';
+                }, 8000);
+            } else {
+                if (data.message && errorText) errorText.textContent = data.message;
+                errorMsg.style.display = 'flex';
+                errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                // If backend validation returned specific field errors
+                if (data.errors) {
+                    if (data.errors.name) setFieldError(nameInput, 'error-name', true);
+                    if (data.errors.email) setFieldError(emailInput, 'error-email', true);
+                    if (data.errors.phone) setFieldError(phoneInput, 'error-phone', true);
+                    if (data.errors.message) setFieldError(messageInput, 'error-message', true);
+                }
+            }
+        })
+        .catch(function (err) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+
+            if (errorText) errorText.textContent = 'Server connection error. Please try again later.';
+            errorMsg.style.display = 'flex';
+            errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    });
+});
+</script>
 
 <?php
 include_once __DIR__ . '/includes/footer.php';
