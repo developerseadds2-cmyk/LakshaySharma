@@ -642,7 +642,7 @@ body {
                     <div class="rank-metric-icon-light" style="color: #4d7c0f;"><i class="fa-solid fa-globe"></i></div>
                     <span class="rank-badge-light badge-light-green">BWF Senior</span>
                 </div>
-                <div class="rank-metric-value-light text-lime-contrast">#106</div>
+                <div class="rank-metric-value-light text-lime-contrast">#105</div>
                 <div class="rank-metric-label-light">Career-High World Rank</div>
                 <div class="rank-metric-sub-light">Following Uganda International (Feb 2026)</div>
             </div>
