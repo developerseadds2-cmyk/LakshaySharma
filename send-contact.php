@@ -154,7 +154,77 @@ try {
 
         $mail->AltBody = "New Website Inquiry\n\nName: {$name}\nEmail: {$email}\nPhone: {$phone}\nDate: {$date}\n\nMessage:\n{$message}";
 
+        // Send notification email to admin/team
         $mail->send();
+
+        // Send automatic acknowledgment / confirmation copy to the user
+        try {
+            $userMail = new PHPMailer(true);
+            $userMail->isSMTP();
+            $userMail->Host       = $mail->Host;
+            $userMail->SMTPAuth   = $mail->SMTPAuth;
+            $userMail->Username   = $mail->Username;
+            $userMail->Password   = $mail->Password;
+            $userMail->SMTPSecure = $mail->SMTPSecure;
+            $userMail->Port       = $mail->Port;
+
+            $userMail->setFrom($fromEmail, $fromName);
+            $userMail->addAddress($email, $name);
+            $userMail->addReplyTo($toEmail, $toName);
+
+            $userMail->isHTML(true);
+            $userMail->CharSet = 'UTF-8';
+            $userMail->Subject = 'Thank you for contacting Lakshay Sharma';
+
+            $userMail->Body = "
+            <div style='font-family: Arial, sans-serif; background-color: #f1f5f9; padding: 25px; color: #0b1528;'>
+                <div style='max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;'>
+                    <div style='background: #101C35; padding: 22px 28px; border-bottom: 3px solid #C6F135;'>
+                        <h2 style='color: #ffffff; margin: 0; font-size: 20px; font-weight: 800;'>Thank You for Reaching Out!</h2>
+                        <p style='color: #C6F135; margin: 4px 0 0 0; font-size: 13px; font-weight: 600;'>Lakshay Sharma Official Portfolio</p>
+                    </div>
+                    <div style='padding: 28px;'>
+                        <p style='font-size: 16px; margin: 0 0 16px 0; color: #0b1528;'>Dear <strong>{$safeName}</strong>,</p>
+                        <p style='font-size: 14px; line-height: 1.6; color: #334155; margin: 0 0 20px 0;'>
+                            Thank you for getting in touch. We have successfully received your inquiry and our team will review it and get back to you as soon as possible.
+                        </p>
+
+                        <div style='background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px; margin-bottom: 20px;'>
+                            <h3 style='margin: 0 0 12px 0; font-size: 13px; font-weight: 800; text-transform: uppercase; color: #64748b;'>Summary of Your Submission:</h3>
+                            <table style='width: 100%; border-collapse: collapse; font-size: 14px;'>
+                                <tr>
+                                    <td style='padding: 6px 0; color: #64748b; width: 110px;'>Phone:</td>
+                                    <td style='padding: 6px 0; color: #0b1528; font-weight: 600;'>{$safePhone}</td>
+                                </tr>
+                                <tr>
+                                    <td style='padding: 6px 0; color: #64748b;'>Submitted:</td>
+                                    <td style='padding: 6px 0; color: #0b1528;'>{$date}</td>
+                                </tr>
+                                <tr>
+                                    <td style='padding: 6px 0; color: #64748b; vertical-align: top;'>Message:</td>
+                                    <td style='padding: 6px 0; color: #0b1528;'>{$safeMessage}</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <p style='font-size: 13px; line-height: 1.5; color: #64748b; margin: 0;'>
+                            Warm regards,<br>
+                            <strong style='color: #0b1528;'>Team Lakshay Sharma</strong>
+                        </p>
+                    </div>
+                    <div style='background: #f8fafc; padding: 14px 28px; text-align: center; color: #94a3b8; font-size: 12px; border-top: 1px solid #e2e8f0;'>
+                        This is an automated confirmation from the official portfolio of Lakshay Sharma.
+                    </div>
+                </div>
+            </div>";
+
+            $userMail->AltBody = "Dear {$name},\n\nThank you for reaching out to Lakshay Sharma. We have received your inquiry and will respond shortly.\n\nYour message:\n{$message}\n\nWarm regards,\nTeam Lakshay Sharma";
+
+            $userMail->send();
+        } catch (Exception $userMailEx) {
+            // Log if user confirmation copy fails, but don't fail the primary submission
+            error_log("User confirmation email failed: " . $userMailEx->getMessage());
+        }
     } else {
         // Fallback: log to file if SMTP disabled
         error_log("Contact Form (SMTP disabled): Name: $name, Email: $email, Phone: $phone, Message: $message");

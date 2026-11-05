@@ -11,15 +11,15 @@ return [
     'enabled'      => true,
 
     // SMTP Server Settings
-    'smtp_host'    => 'smtp.gmail.com',         // e.g., smtp.gmail.com, mail.lakshaysharma.com
+    'smtp_host'    => 'smtp.zoho.in',         // e.g., smtp.gmail.com, mail.lakshaysharma.com
     'smtp_auth'    => true,
-    'smtp_user'    => 'your-email@gmail.com',    // Your SMTP email / username
-    'smtp_pass'    => 'your-app-password',       // Your SMTP password or Gmail App Password
-    'smtp_secure'  => 'tls',                     // 'tls' (port 587) or 'ssl' (port 465)
-    'smtp_port'    => 587,
+    'smtp_user'    => 'komal@punjabit.co.in',    // Your SMTP email / username
+    'smtp_pass'    => 'Sachdeva123Punjab',       // Your SMTP password or Gmail App Password
+    'smtp_secure'  => 'ssl',                     // 'tls' (port 587) or 'ssl' (port 465)
+    'smtp_port'    => 465,
 
     // Sender Details
-    'from_email'   => 'your-email@gmail.com',
+    'from_email'   => 'komal@punjabit.co.in',
     'from_name'    => 'Lakshay Sharma Portfolio',
 
     // Where contact form submissions should be delivered
