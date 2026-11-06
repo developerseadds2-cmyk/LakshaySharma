@@ -204,6 +204,139 @@ body {
     color: #0b1528;
 }
 
+/* ==========================================================================
+   NEW: CAREER JOURNEY & HIGHLIGHTS SECTION
+   ========================================================================== */
+.about-journey-section {
+    padding: 4.5rem 0;
+    background-color: #f8fafc;
+    border-bottom: 1px solid rgba(11, 21, 40, 0.08);
+}
+
+.about-journey-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 3.5rem;
+    align-items: stretch;
+}
+
+.about-journey-card {
+    background: #ffffff;
+    border: 1px solid rgba(11, 21, 40, 0.08);
+    border-radius: 18px;
+    padding: 2.5rem 2.2rem;
+    box-shadow: 0 6px 20px rgba(11, 21, 40, 0.04);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.about-journey-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    font-style: italic;
+    color: #0b1528;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.about-journey-title i {
+    color: #1769FF;
+}
+
+.about-journey-text {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+}
+
+.about-journey-text:last-child {
+    margin-bottom: 0;
+}
+
+.about-partner-box {
+    background: linear-gradient(135deg, #101C35 0%, #0d172c 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 2.5rem 2.2rem;
+    color: #ffffff;
+    box-shadow: 0 12px 30px rgba(16, 28, 53, 0.15);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.about-partner-desc:last-of-type {
+    margin-bottom: auto !important;
+    padding-bottom: 1.5rem;
+}
+
+.about-partner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.9rem;
+    background: rgba(198, 241, 53, 0.12);
+    border: 1px solid rgba(198, 241, 53, 0.35);
+    border-radius: 9999px;
+    color: var(--color-lime);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+.about-partner-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    font-style: italic;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+}
+
+.about-partner-desc {
+    font-size: 0.98rem;
+    color: #DCE3EC;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+}
+
+.about-partner-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background-color: var(--color-lime);
+    color: #0b1528;
+    font-weight: 800;
+    font-size: 0.92rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.about-partner-btn:hover {
+    background-color: #d7ff4d;
+    box-shadow: 0 8px 24px rgba(198, 241, 53, 0.45);
+    transform: translateY(-2px);
+    color: #0b1528;
+}
+
+@media (max-width: 992px) {
+    .about-journey-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
 /* Pillars Section */
 .about-pillars-section {
     padding: 4.5rem 0 5.5rem 0;
@@ -354,6 +487,50 @@ body {
         text-align: center;
     }
 
+    .about-subheading-wrap {
+        white-space: normal !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+        font-size: clamp(1.35rem, 5.2vw, 1.85rem) !important;
+    }
+
+    .about-journey-section {
+        padding: 3rem 0;
+    }
+
+    .about-journey-card,
+    .about-partner-box {
+        padding: 1.8rem 1.4rem;
+        border-radius: 16px;
+    }
+
+    .about-journey-title {
+        font-size: clamp(0.85rem, 3.6vw, 1.25rem);
+        white-space: nowrap !important;
+        flex-wrap: nowrap !important;
+        line-height: 1.2;
+    }
+
+    .about-partner-title {
+        font-size: clamp(0.85rem, 3.6vw, 1.25rem);
+        white-space: nowrap !important;
+        line-height: 1.2;
+    }
+
+    .about-journey-text,
+    .about-partner-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .about-partner-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 0.85rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
     .about-pillars-section {
         padding: 3rem 0;
     }
@@ -364,9 +541,9 @@ body {
 
     .about-section-title {
         font-size: clamp(1.45rem, 5.8vw, 1.95rem);
-        white-space: nowrap;
+        white-space: normal !important;
         text-align: center;
-        line-height: 1.15;
+        line-height: 1.2;
     }
 
     .about-section-sub {
@@ -423,7 +600,7 @@ body {
 
         <!-- Main Title -->
         <h1 class="page-main-title-dark">
-            The Person Behind<br class="mobile-only-br"> The Racket
+            Lakshay Sharma – Badminton<br class="mobile-only-br"> Player from India
         </h1>
     </div>
 </section>
@@ -441,14 +618,20 @@ body {
 
             <!-- Right: Biography & Journey Overview -->
             <div>
-                <h2 class="about-bio-lead">
-                    A rising force in Indian badminton, his talent, determination, and achievements across competitive circuits fuel his pursuit of Olympic glory. Discover the values and play that drive Lakshay Sharma.
+                <div class="kicker-slashes-wrap" style="margin-bottom: 0.6rem;">
+                    <span class="kicker-slashes">///</span>
+                    <span class="kicker-text-dark">ATHLETIC PROFILE</span>
+                </div>
+
+                <h2 class="sec2-title-dark about-subheading-wrap" style="margin-bottom: 1.25rem; font-size: clamp(1.4rem, 2.4vw, 2.15rem);">
+                    Representing Punjab. Indian Badminton Player.
                 </h2>
+                
                 <p class="about-bio-text">
-                    Born in 2005 in Ludhiana, Lakshay Sharma took to the badminton court at a very young age. Coached exclusively by his father, Mangat Rai Sharma (an NIS-certified national badminton coach), Lakshay developed a distinctive, attacking, and aggressive playing style backed by relentless stamina.
+                    Lakshay Sharma, born on 21 September 2005, is an Indian badminton player from Ludhiana, Punjab, who represents Punjab in Men’s Singles competitions. Through years of dedicated training, competitive experience and participation in national and international tournaments, he has established himself as a promising player in Indian badminton.
                 </p>
                 <p class="about-bio-text">
-                    Through sheer grit, discipline, and consistent performances, he rose through the ranks of Indian junior badminton—culminating in captaining the Indian Junior Team at the Asian Junior Championships in Indonesia, achieving an All-India Senior Ranking of #4, and breaking into the top tier of international men's singles.
+                    Lakshay’s badminton journey reflects discipline, determination and a strong commitment to the sport. He has competed in several international tournaments, gaining valuable experience against players from different countries and badminton circuits.
                 </p>
 
                 <!-- Quick Fact Cards -->
@@ -470,6 +653,52 @@ body {
                         <div class="bio-fact-val">Airports Authority of India (AAI)</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. CAREER JOURNEY & COMPETITIVE HIGHLIGHTS (NEW SECTION) -->
+<section class="about-journey-section">
+    <div class="site-container">
+        <div class="about-journey-grid">
+            <!-- Left Card: International & University Record -->
+            <div class="about-journey-card">
+                <h3 class="about-journey-title">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Competitive Record &amp; Achievements</span>
+                </h3>
+                <p class="about-journey-text">
+                    His international achievements include podium finishes at tournaments such as the Uganda International Challenge 2026, Cameroon International Challenge 2025, Czech International Future Series 2025 and Polish International 2024, where he secured bronze medals. He also achieved a silver medal at the Kazakhstan International Series 2023.
+                </p>
+                <p class="about-journey-text">
+                    At the university level, Lakshay has delivered notable performances, winning silver in Men’s Singles at the All India Inter-University Championship 2026 and bronze in 2024. He was also part of the gold-medal-winning team at the Khelo India University Games 2024.
+                </p>
+                <p class="about-journey-text">
+                    His profile records an India Senior Men’s Singles ranking of 4 and a World Men’s Singles ranking of 105. It also records a significant junior career, including a World U-19 ranking of 16 and an India U-19 Singles ranking of 1.
+                </p>
+            </div>
+
+            <!-- Right Card: Mentorship, Future Ambitions & Brand Partnerships -->
+            <div class="about-partner-box">
+                <div class="about-partner-badge">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Coaching &amp; Future Vision</span>
+                </div>
+                <h3 class="about-partner-title">Mentorship &amp; Partnership Opportunities</h3>
+                <p class="about-partner-desc">
+                    Lakshay’s training and development have been guided by his father, <strong style="color: #ffffff;">Mangat Rai Sharma</strong>, who is an NIS-qualified national badminton coach. His coaching background and guidance have been an important part of Lakshay’s sporting journey.
+                </p>
+                <p class="about-partner-desc">
+                    As he continues to compete and develop his game, Lakshay aims to achieve greater success at national and international levels, improve his world ranking and represent India with distinction.
+                </p>
+                <p class="about-partner-desc" style="color: #ffffff; font-weight: 600;">
+                    His journey presents an opportunity for sports organisations, brands and corporate partners to support a young Indian athlete with international exposure, competitive achievements and ambitions for the future.
+                </p>
+                <a href="contact" class="about-partner-btn">
+                    <span>Connect For Sponsorships</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </div>

@@ -143,12 +143,12 @@
 }
 
 .sec2-desc-dark {
-    font-size: 1.05rem;
-    color: #000000; /* Bold Black Subtitle like Let's Connect */
-    font-weight: 700;
-    line-height: 1.5;
+    font-size: 1.02rem;
+    color: #1e293b;
+    font-weight: 500;
+    line-height: 1.65;
     margin-bottom: 1.5rem;
-    max-width: 460px;
+    max-width: 540px;
 }
 
 .sec2-desc-light {
@@ -1263,32 +1263,28 @@
     }
 
     .about2-center-content .sec2-title-dark {
-        white-space: nowrap !important;
+        white-space: normal !important;
         font-size: clamp(1.35rem, 5.6vw, 1.85rem) !important;
     }
 
-    .btn2-outline-dark {
-        margin: 0 auto 0.75rem auto !important;
-        margin-bottom: 0.75rem !important;
+    .about2-center-content .sec2-desc-dark {
+        display: block !important;
+        flex-direction: column !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 0.5rem !important;
+        margin: 0 auto 1.4rem auto !important;
+        text-align: center !important;
     }
 
-    .about2-center-content {
-        padding-top: 10px !important;
-        padding-bottom: 0 !important;
-        margin-bottom: 0 !important;
-    }
-
-    .about2-center-content > div {
-        margin-bottom: 0 !important;
-    }
-
-    .desktop-only-br {
-        display: none !important;
-    }
-
-    .about2-center-content .sec2-title-dark {
-        white-space: nowrap !important;
-        font-size: clamp(1.35rem, 5.6vw, 1.85rem) !important;
+    .about2-center-content .sec2-desc-dark p {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+        margin-bottom: 0.85rem !important;
     }
 
     .btn2-outline-dark {
@@ -1498,7 +1494,7 @@
     /* All CTA Buttons Centered */
     .hero-cta-wrap,
     .hero2-cta-wrap,
-    .about2-center-content > div,
+    .about2-btn-wrap,
     .journey2-grid > div:first-child > div,
     .achieve2-grid > div:first-child > div,
     .gallery2-intro > div,
