@@ -600,7 +600,7 @@ body {
 
         <!-- Main Title -->
         <h1 class="page-main-title-dark">
-            Lakshay Sharma – Badminton<br class="mobile-only-br"> Player from India
+            Lakshay Sharma - Badminton<br class="mobile-only-br"> Player from India
         </h1>
     </div>
 </section>
@@ -628,10 +628,10 @@ body {
                 </h2>
                 
                 <p class="about-bio-text">
-                    Lakshay Sharma, born on 21 September 2005, is an Indian badminton player from Ludhiana, Punjab, who represents Punjab in Men’s Singles competitions. Through years of dedicated training, competitive experience and participation in national and international tournaments, he has established himself as a promising player in Indian badminton.
+                    Lakshay Sharma, born on 21 September 2005, is an Indian badminton player from Ludhiana, Punjab, who represents Punjab in Men's Singles competitions. Through years of dedicated training, competitive experience and participation in national and international tournaments, he has established himself as a promising player in Indian badminton.
                 </p>
                 <p class="about-bio-text">
-                    Lakshay’s badminton journey reflects discipline, determination and a strong commitment to the sport. He has competed in several international tournaments, gaining valuable experience against players from different countries and badminton circuits.
+                    Lakshay's badminton journey reflects discipline, determination and a strong commitment to the sport. He has competed in several international tournaments, gaining valuable experience against players from different countries and badminton circuits.
                 </p>
 
                 <!-- Quick Fact Cards -->
@@ -672,10 +672,10 @@ body {
                     His international achievements include podium finishes at tournaments such as the Uganda International Challenge 2026, Cameroon International Challenge 2025, Czech International Future Series 2025 and Polish International 2024, where he secured bronze medals. He also achieved a silver medal at the Kazakhstan International Series 2023.
                 </p>
                 <p class="about-journey-text">
-                    At the university level, Lakshay has delivered notable performances, winning silver in Men’s Singles at the All India Inter-University Championship 2026 and bronze in 2024. He was also part of the gold-medal-winning team at the Khelo India University Games 2024.
+                    At the university level, Lakshay has delivered notable performances, winning silver in Men's Singles at the All India Inter-University Championship 2026 and bronze in 2024. He was also part of the gold-medal-winning team at the Khelo India University Games 2024.
                 </p>
                 <p class="about-journey-text">
-                    His profile records an India Senior Men’s Singles ranking of 4 and a World Men’s Singles ranking of 105. It also records a significant junior career, including a World U-19 ranking of 16 and an India U-19 Singles ranking of 1.
+                    His profile records an India Senior Men's Singles ranking of 4 and a World Men's Singles ranking of 105. It also records a significant junior career, including a World U-19 ranking of 16 and an India U-19 Singles ranking of 1.
                 </p>
             </div>
 
@@ -687,7 +687,7 @@ body {
                 </div>
                 <h3 class="about-partner-title">Mentorship &amp; Partnership Opportunities</h3>
                 <p class="about-partner-desc">
-                    Lakshay’s training and development have been guided by his father, <strong style="color: #ffffff;">Mangat Rai Sharma</strong>, who is an NIS-qualified national badminton coach. His coaching background and guidance have been an important part of Lakshay’s sporting journey.
+                    Lakshay's training and development have been guided by his father, <strong style="color: #ffffff;">Mangat Rai Sharma</strong>, who is an NIS-qualified national badminton coach. His coaching background and guidance have been an important part of Lakshay's sporting journey.
                 </p>
                 <p class="about-partner-desc">
                     As he continues to compete and develop his game, Lakshay aims to achieve greater success at national and international levels, improve his world ranking and represent India with distinction.

@@ -177,15 +177,15 @@ include_once __DIR__ . '/includes/header.php';
                 </div>
 
                 <h2 class="sec2-title-dark">
-                    Lakshay Sharma –<br class="desktop-only-br"> Indian Badminton Player
+                    Lakshay Sharma -<br class="desktop-only-br"> Indian Badminton Player
                 </h2>
 
                 <div class="sec2-desc-dark">
                     <p style="margin-bottom: 0.85rem;">
-                        Lakshay Sharma is an emerging Indian badminton player from Ludhiana, Punjab, representing the state of Punjab in Men’s Singles badminton. Born on 21 September 2005, Lakshay has built his badminton career through consistent dedication, disciplined training and participation in national and international competitions.
+                        Lakshay Sharma is an emerging Indian badminton player from Ludhiana, Punjab, representing the state of Punjab in Men's Singles badminton. Born on 21 September 2005, Lakshay has built his badminton career through consistent dedication, disciplined training and participation in national and international competitions.
                     </p>
                     <p style="margin-bottom: 0.85rem;">
-                        He has represented India at several international tournaments and secured podium finishes, including medals at international events in Uganda, Cameroon, Czech Republic, Poland and Kazakhstan. His profile records an India Senior Men’s Singles ranking of 4 and a World Men’s Singles ranking of 105.
+                        He has represented India at several international tournaments and secured podium finishes, including medals at international events in Uganda, Cameroon, Czech Republic, Poland and Kazakhstan. His profile records an India Senior Men's Singles ranking of 4 and a World Men's Singles ranking of 105.
                     </p>
                     <!-- <p style="margin-bottom: 1.25rem;">
                         With a strong competitive spirit and a commitment to continuous improvement, Lakshay aims to establish himself further on the international badminton circuit and represent India at the highest level.
